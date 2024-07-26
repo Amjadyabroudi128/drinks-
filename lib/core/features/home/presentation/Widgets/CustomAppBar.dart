@@ -1,16 +1,27 @@
+import 'package:drinks/core/features/home/presentation/Widgets/welcomeText.dart';
 import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 50, left: 30),
+    return  Padding(
+      padding: EdgeInsets.only(top: 60, left: 30),
       child: Column(
         children: [
-          Text("hello world")
+          RichText(
+            text: TextSpan(
+              text: 'Hello ',
+              style: DefaultTextStyle.of(context).style,
+              children: const <TextSpan>[
+                TextSpan(text: 'Amjad', style: TextStyle(fontWeight: FontWeight.bold)),
+        ],
+      ),
+    ),
         ],
       ),
     );
   }
+
+
 }
