@@ -1,4 +1,4 @@
-import 'package:drinks/core/features/home/Widgets/homeViewBody.dart';
+import 'package:drinks/core/features/home/presentation/Widgets/homeViewBody.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
