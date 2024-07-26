@@ -1,10 +1,10 @@
+import 'package:drinks/core/features/home/Widgets/homeViewBody.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key,});
 
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -14,11 +14,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+    return const Scaffold(
+      body: homeViewBody(
+
+      )
     );
   }
 }
