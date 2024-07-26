@@ -1,4 +1,3 @@
-import 'package:drinks/core/features/home/presentation/Widgets/welcomeText.dart';
 import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
