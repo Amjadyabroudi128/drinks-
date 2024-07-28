@@ -12,7 +12,7 @@ class Searchfiled extends StatelessWidget {
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: 'Search',
-          hintText: 'Enter search term',
+          hintText: 'search for drinks',
         ),
       ),
     );
