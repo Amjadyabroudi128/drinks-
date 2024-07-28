@@ -6,11 +6,14 @@ class Searchfiled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Search',
-        hintText: 'Enter search term',
+    return const Padding(
+      padding: EdgeInsets.all(15.0),
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Search',
+          hintText: 'Enter search term',
+        ),
       ),
     );
   }
