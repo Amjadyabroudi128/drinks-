@@ -1,5 +1,6 @@
 import 'package:drinks/core/features/home/presentation/Widgets/searchFiled.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'CustomAppBar.dart';
 
 class homeViewBody extends StatelessWidget {
@@ -7,12 +8,17 @@ class homeViewBody extends StatelessWidget {
 
    @override
    Widget build(BuildContext context) {
-     return const Column(
-       crossAxisAlignment: CrossAxisAlignment.start,
-       children: [
-         CustomAppBar(),
-         Searchfiled()
-       ],
+     return GestureDetector(
+       onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
+       child: const Scaffold(
+         body: Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: [
+             CustomAppBar(),
+             Searchfiled()
+           ],
+         ),
+       ),
      );
    }
  }
