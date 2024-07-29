@@ -11,7 +11,6 @@ class Searchfiled extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           border: OutlineInputBorder(),
-          labelText: 'Search',
           hintText: 'search for drinks',
         ),
       ),
