@@ -20,12 +20,12 @@ class _SearchfiledState extends State<Searchfiled> {
     return Padding(
       padding: EdgeInsets.all(15.0),
       child: TextField(
-        controller: searchController,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: 'search for drinks',
-        ),
+      controller: searchController,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        hintText: 'search for drinks',
       ),
+    ),
     );
   }
 }
