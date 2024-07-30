@@ -1,3 +1,4 @@
+import 'package:drinks/constatns/Constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,7 @@ class _SearchfiledState extends State<Searchfiled> {
       child: TextField(
       controller: searchController,
       decoration: const InputDecoration(
+        prefixIcon: search,
         border: OutlineInputBorder(),
         hintText: 'search for drinks',
       ),
