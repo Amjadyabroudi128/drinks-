@@ -18,7 +18,7 @@ class _SearchfiledState extends State<Searchfiled> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(15.0),
+      padding: const EdgeInsets.fromLTRB(39, 10, 20, 10),
       child: TextField(
       controller: searchController,
       decoration: const InputDecoration(
