@@ -1,4 +1,5 @@
 import 'package:drinks/constatns/Constants.dart';
+import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,13 +21,24 @@ class _SearchfiledState extends State<Searchfiled> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(29, 10, 20, 10),
-      child: TextField(
-      controller: searchController,
-      decoration:  const InputDecoration(
-        prefixIcon: search,
-        hintText: 'search for drinks',
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.0),
+          gradient: LinearGradient(
+            colors: searchFiled,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.22, 0.25],
+          )
+        ),
+        child: TextField(
+        controller: searchController,
+        decoration:  const InputDecoration(
+          prefixIcon: search,
+          hintText: 'search for drinks',
+        ),
+            ),
       ),
-    ),
     );
   }
 }
