@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static final _border = OutlineInputBorder(
-    borderSide:  BorderSide(color: Colors.grey),
+    borderSide:  BorderSide(color: borderColor),
     borderRadius: BorderRadius.circular(15),
   );
   static final themeData = ThemeData().copyWith(
