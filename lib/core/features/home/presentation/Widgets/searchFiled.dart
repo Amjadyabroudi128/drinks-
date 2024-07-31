@@ -33,8 +33,11 @@ class _SearchfiledState extends State<Searchfiled> {
         ),
         child: TextField(
         controller: searchController,
-        decoration:  const InputDecoration(
-          prefixIcon: search,
+        decoration:   InputDecoration(
+          contentPadding: EdgeInsets.symmetric(vertical: 12.0),
+          prefixIcon: Container(
+              margin: EdgeInsets.only(left: 10.0, right: 39.0),
+              child: search),
           hintText: 'search for drinks',
         ),
             ),
