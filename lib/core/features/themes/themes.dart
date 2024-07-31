@@ -1,4 +1,5 @@
- import 'package:flutter/material.dart';
+ import 'package:drinks/core/features/themes/colors.dart';
+import 'package:flutter/material.dart';
 
 class AppTheme {
   static final _border = OutlineInputBorder(
@@ -7,8 +8,8 @@ class AppTheme {
   );
   static final themeData = ThemeData().copyWith(
     inputDecorationTheme:  InputDecorationTheme(
-      prefixIconColor: Colors.black,
-      suffixIconColor: Colors.black,
+      prefixIconColor: blackIcon,
+      suffixIconColor: blackIcon,
       enabledBorder: _border,
       focusedBorder: _border,
     )
