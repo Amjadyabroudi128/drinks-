@@ -19,12 +19,19 @@ class _SearchfiledState extends State<Searchfiled> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(39, 10, 20, 10),
+      padding: const EdgeInsets.fromLTRB(29, 10, 20, 10),
       child: TextField(
       controller: searchController,
-      decoration: const InputDecoration(
+      decoration:  InputDecoration(
         prefixIcon: search,
-        border: OutlineInputBorder(),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(),
+          borderRadius: BorderRadius.circular(15),
+        ),
         hintText: 'search for drinks',
       ),
     ),
