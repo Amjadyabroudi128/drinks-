@@ -22,16 +22,8 @@ class _SearchfiledState extends State<Searchfiled> {
       padding: const EdgeInsets.fromLTRB(29, 10, 20, 10),
       child: TextField(
       controller: searchController,
-      decoration:  InputDecoration(
+      decoration:  const InputDecoration(
         prefixIcon: search,
-        enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(),
-          borderRadius: BorderRadius.circular(15),
-        ),
         hintText: 'search for drinks',
       ),
     ),
