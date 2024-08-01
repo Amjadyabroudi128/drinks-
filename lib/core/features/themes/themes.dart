@@ -1,4 +1,5 @@
- import 'package:drinks/core/features/themes/colors.dart';
+ import 'package:drinks/constatns/TextStyles.dart';
+import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
@@ -12,6 +13,7 @@ class AppTheme {
       suffixIconColor: blackIcon,
       enabledBorder: _border,
       focusedBorder: _border,
+      hintStyle: TextStyles.hint
     )
   );
  }
