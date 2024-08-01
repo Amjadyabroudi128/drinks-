@@ -27,8 +27,8 @@ class _SearchfiledState extends State<Searchfiled> {
           gradient: LinearGradient(
             colors: searchFiled,
             begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            stops: [0.26, 0.22],
+            end: Alignment.bottomCenter,
+            stops: [0.49, 0.10],
           )
         ),
         child: TextField(
@@ -37,7 +37,7 @@ class _SearchfiledState extends State<Searchfiled> {
           prefixIcon: Container(
               margin: EdgeInsets.only(left: 16.0, right: 39.0),
               child: search),
-          hintText: 'search for drinks',
+          hintText: 'Search for drinks',
         ),
             ),
       ),
