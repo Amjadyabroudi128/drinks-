@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../constatns/Constants.dart';
+
 class myRow extends StatelessWidget {
   const myRow({
     super.key,
@@ -17,7 +19,7 @@ class myRow extends StatelessWidget {
         Spacer(),
         IconButton(
           onPressed: (){},
-          icon: const Icon(Icons.shopping_bag_outlined, weight: 20, size: 32,),
+          icon: bag
         )
       ],
     );
