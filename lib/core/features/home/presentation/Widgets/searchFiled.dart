@@ -23,7 +23,7 @@ class _SearchfiledState extends State<Searchfiled> {
       padding: const EdgeInsets.fromLTRB(29, 10, 20, 10),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
+            borderRadius: BorderRadius.circular(22.0),
           gradient: LinearGradient(
             colors: searchFiled,
             begin: Alignment.topLeft,
