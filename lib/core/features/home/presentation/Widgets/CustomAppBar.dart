@@ -1,24 +1,28 @@
 import 'package:drinks/constatns/Constants.dart';
 import 'package:flutter/material.dart';
+
+import 'myRow.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(40, 99, 20, 10),
+      padding: const EdgeInsets.fromLTRB(40, 40, 20, 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          myRow(),
+          SizedBox(height: 10,),
           RichText(
             text: const TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Hello ',
+                  text: 'Hello, ',
                   style: TextStyle(fontSize: 16.0, color: Colors.black),
                 ),
                 TextSpan(
-                  text: 'Friend',
+                  text: 'Amjad',
                   style: TextStyle(fontSize: 16.0, color: Colors.black, fontWeight: FontWeight.bold),
                 ),
               ],
