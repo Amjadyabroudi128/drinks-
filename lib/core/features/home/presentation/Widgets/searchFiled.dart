@@ -28,14 +28,14 @@ class _SearchfiledState extends State<Searchfiled> {
             colors: searchFiled,
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            stops: [0.22, 0.15],
+            stops: [0.26, 0.22],
           )
         ),
         child: TextField(
         controller: searchController,
         decoration:   InputDecoration(
           prefixIcon: Container(
-              margin: EdgeInsets.only(left: 10.0, right: 39.0),
+              margin: EdgeInsets.only(left: 16.0, right: 39.0),
               child: search),
           hintText: 'search for drinks',
         ),
