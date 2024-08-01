@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static final _border = OutlineInputBorder(
     borderSide:  BorderSide(color: borderColor, width: 3),
-    borderRadius: BorderRadius.circular(15),
+    borderRadius: BorderRadius.circular(22),
   );
   static final themeData = ThemeData().copyWith(
     inputDecorationTheme:  InputDecorationTheme(
-      prefixIconColor: blackIcon,
+        contentPadding: EdgeInsets.all(10.0),
+        prefixIconColor: blackIcon,
       suffixIconColor: blackIcon,
       enabledBorder: _border,
       focusedBorder: _border,
