@@ -28,13 +28,12 @@ class _SearchfiledState extends State<Searchfiled> {
             colors: searchFiled,
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            stops: [0.22, 0.25],
+            stops: [0.22, 0.15],
           )
         ),
         child: TextField(
         controller: searchController,
         decoration:   InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 12.0),
           prefixIcon: Container(
               margin: EdgeInsets.only(left: 10.0, right: 39.0),
               child: search),
