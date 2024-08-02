@@ -19,11 +19,11 @@ class CustomAppBar extends StatelessWidget {
               children: <TextSpan>[
                 TextSpan(
                   text: 'Hello, ',
-                  style: TextStyle(fontSize: 16.0, color: Colors.black),
+                  style: TextStyle(fontSize: 20.0, color: Colors.black),
                 ),
                 TextSpan(
                   text: 'Amjad',
-                  style: TextStyle(fontSize: 16.0, color: Colors.black, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20.0, color: Colors.black, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -34,11 +34,11 @@ class CustomAppBar extends StatelessWidget {
               children: <TextSpan>[
                 TextSpan(
                   text: 'What would  you ',
-                  style: TextStyle(fontSize: 16.0, color: Colors.black),
+                  style: TextStyle(fontSize: 19.0, color: Colors.black),
                 ),
                 TextSpan(
-                  text: 'like',
-                  style: TextStyle(fontSize: 16.0, color: Colors.black, fontWeight: FontWeight.bold),
+                  text: 'like?',
+                  style: TextStyle(fontSize: 19.0, color: Colors.black, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
