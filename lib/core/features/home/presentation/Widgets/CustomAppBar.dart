@@ -1,4 +1,5 @@
 import 'package:drinks/constatns/Constants.dart';
+import 'package:drinks/constatns/TextStyles.dart';
 import 'package:flutter/material.dart';
 
 import 'myRow.dart';
@@ -30,11 +31,11 @@ class CustomAppBar extends StatelessWidget {
           ),
           sizedBox,// Added space between texts
           RichText(
-            text: const TextSpan(
+            text:  TextSpan(
               children: <TextSpan>[
                 TextSpan(
                   text: 'What would  you ',
-                  style: TextStyle(fontSize: 19.0, color: Colors.black),
+                  style: TextStyles.kFont19
                 ),
                 TextSpan(
                   text: 'like?',
