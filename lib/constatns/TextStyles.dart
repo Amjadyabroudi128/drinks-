@@ -4,4 +4,7 @@ import 'package:flutter/material.dart';
    static TextStyle hint = const TextStyle(
        color: Colors.grey
    );
+   static TextStyle kFont19 = const TextStyle(
+       fontSize: 19.0, color: Colors.black
+   );
  }
