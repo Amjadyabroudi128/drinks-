@@ -10,4 +10,10 @@ import 'package:flutter/material.dart';
    static TextStyle Bold19 = const TextStyle(
        fontSize: 19.0, color: Colors.black, fontWeight: FontWeight.bold
    );
+   static TextStyle Bold20 = const TextStyle(
+       fontSize: 20.0, color: Colors.black, fontWeight: FontWeight.bold
+   );
+   static TextStyle kFont20 = const TextStyle(
+       fontSize: 20.0, color: Colors.black,
+   );
  }

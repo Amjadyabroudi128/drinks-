@@ -16,15 +16,15 @@ class CustomAppBar extends StatelessWidget {
           myRow(),
           SizedBox(height: 10,),
           RichText(
-            text: const TextSpan(
+            text:  TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Hello, ',
-                  style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  text: 'Hello,',
+                  style: TextStyles.kFont20
                 ),
                 TextSpan(
                   text: 'Amjad',
-                  style: TextStyle(fontSize: 20.0, color: Colors.black, fontWeight: FontWeight.bold),
+                  style: TextStyles.Bold20,
                 ),
               ],
             ),
@@ -34,7 +34,7 @@ class CustomAppBar extends StatelessWidget {
             text:  TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'What would  you ',
+                  text: 'What would you ',
                   style: TextStyles.kFont19
                 ),
                 TextSpan(
