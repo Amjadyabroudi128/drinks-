@@ -14,5 +14,6 @@ class Drinks {
  });
   final List<Drinks> drink = [
     Drinks(name: "Cola", image: "image", color: Colors.red),
+    Drinks(name: "Fanta", image: "image", color: Colors.orange)
   ];
  }
