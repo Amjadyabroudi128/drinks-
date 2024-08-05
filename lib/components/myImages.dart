@@ -1,7 +1,8 @@
+
  class myImages {
-  String cola = "images/cola.png";
-  String dew = "images/dew.png";
-  String fanta = "images/fanta.png";
-  String pepsi = "images/pepsi.png";
-  String sprite = "images/sprite.png";
+ static String cola = "images/cola.png";
+ static  String dew = "images/dew.png";
+ static String fanta = "images/fanta.png";
+ static String pepsi = "images/pepsi.png";
+ static String sprite = "images/sprite.png";
  }
