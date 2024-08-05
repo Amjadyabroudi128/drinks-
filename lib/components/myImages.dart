@@ -5,4 +5,5 @@
  static String fanta = "images/fanta.png";
  static String pepsi = "images/pepsi.png";
  static String sprite = "images/sprite.png";
+ static String pepper = "images/pepper.png";
  }

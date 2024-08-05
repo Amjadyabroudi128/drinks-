@@ -20,6 +20,5 @@ class Drinks {
     Drinks(name: "pepsi", image: myImages.pepsi, color: Colors.blue),
     Drinks(name: "sprite", image: myImages.sprite, color: Colors.green),
 
-
   ];
  }
