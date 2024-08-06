@@ -1,3 +1,4 @@
+import 'package:drinks/core/features/home/presentation/Widgets/ListView.dart';
 import 'package:drinks/core/features/home/presentation/Widgets/searchFiled.dart';
 import 'package:drinks/core/features/models/drinkModel.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +18,8 @@ class homeViewBody extends StatelessWidget {
            crossAxisAlignment: CrossAxisAlignment.start,
            children: [
              CustomAppBar(),
-             Searchfiled()
+             Searchfiled(),
+             DrinksList(),
            ],
          ),
        ),
