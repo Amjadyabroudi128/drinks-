@@ -15,11 +15,16 @@ class DrinksList extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ScrollConfiguration(
       behavior: ScrollBehavior(),
-      child: ListView.builder(
-        itemCount: drinks.length,
-        itemBuilder: (context, index) {
-          return DrinkCard(drink: drinks[index]);
-        },
+      child: SingleChildScrollView(
+        child: GridView.builder(
+          shrinkWrap: true,
+          itemCount: drinks.length,
+          itemBuilder: (context, index) {
+            return DrinkCard(drink: drinks[index]);
+          }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, mainAxisExtent: 200,
+        ),
+        ),
       ),
     );
   }
