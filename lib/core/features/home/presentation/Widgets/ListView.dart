@@ -2,6 +2,7 @@ import 'package:drinks/components/myImages.dart';
 import 'package:drinks/constatns/drinksList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 
 
@@ -20,11 +21,11 @@ class _DrinksListState extends State<DrinksList> {
   Widget build(BuildContext context) {
     return const ScrollConfiguration(
       behavior: ScrollBehavior(),
-      child: Column(
-        children: [
-          Text("hello ")
-        ],
-      ),
+      child: Card(
+        margin: EdgeInsets.all(10),
+        color: Colors.red,
+        child: Text("hello wworld"),
+      )
     );
   }
 }
