@@ -1,31 +1,26 @@
-import 'package:drinks/components/myImages.dart';
 import 'package:drinks/constatns/drinksList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 
+import '../../../models/drinkModel.dart';
+import 'DrinkCard.dart';
 
+class DrinksList extends StatelessWidget {
+  final Drinks? drink;
 
-class DrinksList extends StatefulWidget {
-  const DrinksList({super.key,});
-
-
-
-  @override
-  State<DrinksList> createState() => _DrinksListState();
-}
-
-class _DrinksListState extends State<DrinksList> {
-
+  const DrinksList({super.key, this.drink,});
   @override
   Widget build(BuildContext context) {
-    return const ScrollConfiguration(
+    return  ScrollConfiguration(
       behavior: ScrollBehavior(),
-      child: Card(
-        margin: EdgeInsets.all(10),
-        color: Colors.red,
-        child: Text("hello wworld"),
-      )
+      child: ListView.builder(
+        itemCount: drinks.length,
+        itemBuilder: (context, index) {
+          return DrinkCard(drink: drinks[index]);
+        },
+      ),
     );
   }
 }

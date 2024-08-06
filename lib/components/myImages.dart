@@ -1,9 +1,9 @@
 
  class myImages {
- static String cola = "images/cola.png";
+ static String cola = "images/Cola.png";
  static  String dew = "images/dew.png";
  static String fanta = "images/fanta.png";
  static String pepsi = "images/pepsi.png";
- static String sprite = "images/sprite.png";
+ static String sprite = "images/sprite.jpg";
  static String pepper = "images/pepper.png";
  }
