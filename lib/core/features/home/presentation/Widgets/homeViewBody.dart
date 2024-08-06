@@ -19,7 +19,7 @@ class homeViewBody extends StatelessWidget {
            children: [
              CustomAppBar(),
              Searchfiled(),
-             DrinksList(),
+             DrinksList()
            ],
          ),
        ),
