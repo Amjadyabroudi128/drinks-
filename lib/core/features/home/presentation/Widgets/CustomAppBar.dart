@@ -39,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
                 TextSpan(
                   text: 'like?',
-                  style: TextStyle(fontSize: 19.0, color: Colors.black, fontWeight: FontWeight.bold),
+                  style: TextStyles.Bold19
                 ),
               ],
             ),
