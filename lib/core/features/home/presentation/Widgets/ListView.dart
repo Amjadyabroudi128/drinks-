@@ -1,5 +1,8 @@
+import 'package:drinks/components/myImages.dart';
+import 'package:drinks/constatns/drinksList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 
 
 class DrinksList extends StatefulWidget {
@@ -15,11 +18,10 @@ class _DrinksListState extends State<DrinksList> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(30, 80, 20, 10),
-      child: Center(
-        child: Text("hello world"),
-      )
+    return Column(
+      children: [
+
+      ],
     );
   }
 }
