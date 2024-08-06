@@ -1,6 +1,7 @@
 
  import 'dart:ui';
 
+import 'package:drinks/components/myImages.dart';
 import 'package:flutter/material.dart';
 class Drinks {
   late String image;

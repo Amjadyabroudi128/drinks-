@@ -18,10 +18,13 @@ class _DrinksListState extends State<DrinksList> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-
-      ],
+    return const ScrollConfiguration(
+      behavior: ScrollBehavior(),
+      child: Column(
+        children: [
+          Text("hello ")
+        ],
+      ),
     );
   }
 }
