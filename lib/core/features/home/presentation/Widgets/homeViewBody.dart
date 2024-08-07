@@ -13,17 +13,20 @@ class homeViewBody extends StatelessWidget {
 
      return GestureDetector(
        onTap: () => FocusScope.of(context).requestFocus( FocusNode()),
-       child:  Scaffold(
+       child:  const Scaffold(
          body: Padding(
-           padding: const EdgeInsets.all(8.0),
-           child: SingleChildScrollView(
-             child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 CustomAppBar(),
-                 Searchfiled(),
-                 DrinksList()
-               ],
+           padding: EdgeInsets.all(8.0),
+           child: ScrollConfiguration(
+             behavior: ScrollBehavior(),
+             child: SingleChildScrollView(
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   CustomAppBar(),
+                   Searchfiled(),
+                   DrinksList()
+                 ],
+               ),
              ),
            ),
          ),
