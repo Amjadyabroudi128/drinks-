@@ -16,4 +16,8 @@ import 'package:flutter/material.dart';
    static TextStyle kFont20 = const TextStyle(
        fontSize: 20.0, color: Colors.black,
    );
+   static TextStyle drinksNames = const TextStyle(
+     fontSize: 19,
+     fontWeight: FontWeight.w600
+   );
  }
