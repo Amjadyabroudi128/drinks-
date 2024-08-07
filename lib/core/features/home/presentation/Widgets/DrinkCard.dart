@@ -15,16 +15,16 @@ class DrinkCard extends StatelessWidget {
     return  Column(
       children: [
         Container(
-          height: 100,
-          width: 150,
+          height: 150,
+          width: 170,
           decoration: BoxDecoration(
-            color: drink.color.withOpacity(0.7),
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(50),
-              bottomLeft: Radius.circular(60),
-              bottomRight: Radius.circular(60),
-            ),
+            color: drink.color.withOpacity(0.8),
+            // borderRadius: const BorderRadius.only(
+            //   topLeft: Radius.circular(20),
+            //   topRight: Radius.circular(50),
+            //   bottomLeft: Radius.circular(60),
+            //   bottomRight: Radius.circular(60),
+            // ),
             boxShadow: const [
               BoxShadow(
                 color: Colors.black26,
@@ -34,13 +34,13 @@ class DrinkCard extends StatelessWidget {
 
             ],
           ),
-          // child: Center(
-          //   child: Image.asset(drink.image, width: 50, height: 50,),
-          // ),
-          child: const Stack(
-            children: [
 
-            ],
+          child: Container(
+            height: 160,
+            color: drink.color,
+            child: Center(
+              child: Image.asset(drink.image, width: 50, height: 50,),
+            ),
           ),
         ),
         SizedBox(height: 6,),
