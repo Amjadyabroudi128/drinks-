@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../../../../constatns/TextStyles.dart';
+
 class DrinkCard extends StatelessWidget {
   final Drinks drink;
 
@@ -18,10 +20,10 @@ class DrinkCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: drink.color.withOpacity(0.7),
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(50),
+              topLeft: Radius.circular(20),
               topRight: Radius.circular(50),
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(60),
+              bottomRight: Radius.circular(60),
             ),
             boxShadow: const [
               BoxShadow(
@@ -32,12 +34,17 @@ class DrinkCard extends StatelessWidget {
 
             ],
           ),
-          child: Center(
-            child: Image.asset(drink.image, width: 50, height: 50,),
+          // child: Center(
+          //   child: Image.asset(drink.image, width: 50, height: 50,),
+          // ),
+          child: const Stack(
+            children: [
+
+            ],
           ),
         ),
         SizedBox(height: 6,),
-        Text(drink.name)
+        Text(drink.name, style: TextStyles.drinksNames,)
       ],
     );
     // return Container(
