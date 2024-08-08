@@ -20,7 +20,10 @@ class DrinksList extends StatelessWidget {
           shrinkWrap: true,
           itemCount: drinks.length,
           itemBuilder: (context, index) {
-            return DrinkCard(drink: drinks[index]);
+            return Transform.translate(
+                offset: Offset(0, index.isEven ? -28 : -5), // Adjust the offset based on the index
+                child: DrinkCard(drink: drinks[index])
+            );
           }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, mainAxisExtent: 200,
         ),
