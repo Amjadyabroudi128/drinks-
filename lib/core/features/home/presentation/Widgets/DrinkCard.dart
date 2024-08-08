@@ -15,27 +15,20 @@ class DrinkCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           height: 150,
-          width: 170,
-          decoration: const BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 10,
-                offset: Offset(0, 5),
-              ),
-            ],
-          ),
+          width: 150,
           child: Container(
-            color: drink.color.withOpacity(0.81),
+            decoration: BoxDecoration(
+                color: drink.color.withOpacity(0.81),
+                borderRadius: BorderRadius.circular(12.0),
+                border: Border.all()),
             child: Stack(
               children: [
                 Transform.translate(
                   offset: Offset(0, -8),
                   child: Center(
                     child: CustomPaint(
-                      size: Size(130, 150),
                       painter: CupPainter(drink: drink),
                       child: Container(
                         width: 120,

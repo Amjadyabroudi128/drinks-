@@ -39,7 +39,7 @@ class CupPainter extends CustomPainter {
     canvas.drawPath(path, paint);
     // Add black outline
     Paint outlinePaint = Paint()
-      ..color = Colors.black
+      ..color = Colors.black38
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.0; // Adjust thickness as needed
 
