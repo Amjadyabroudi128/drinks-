@@ -18,13 +18,6 @@ class DrinkCard extends StatelessWidget {
           height: 150,
           width: 170,
           decoration: BoxDecoration(
-            color: drink.color.withOpacity(0.8),
-            // borderRadius: const BorderRadius.only(
-            //   topLeft: Radius.circular(20),
-            //   topRight: Radius.circular(50),
-            //   bottomLeft: Radius.circular(60),
-            //   bottomRight: Radius.circular(60),
-            // ),
             boxShadow: const [
               BoxShadow(
                 color: Colors.black26,
@@ -34,12 +27,29 @@ class DrinkCard extends StatelessWidget {
 
             ],
           ),
-
           child: Container(
             height: 160,
-            color: drink.color,
-            child: Center(
-              child: Image.asset(drink.image, width: 50, height: 50,),
+            color: drink.color.withOpacity(0.81),
+            child: Stack(
+              children: [
+                Center(
+                  child: CustomPaint(
+                    size: Size(100, 150),
+                    painter: CupPainter(),
+                    child: Container(
+                      width: 100,
+                      height: 150,
+                      alignment: Alignment.center,
+                      // child: Text(
+                      //   'Press Me',
+                      //   style: TextStyle(color: Colors.white, fontSize: 16),
+                      // ),
+                      child: Image.asset(drink.image, width: 50, height: 50,),
+
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -47,17 +57,45 @@ class DrinkCard extends StatelessWidget {
         Text(drink.name, style: TextStyles.drinksNames,)
       ],
     );
-    // return Container(
-    //   height: 200,
-    //   width: 200,
-    //   child: Card(
-    //     margin: EdgeInsets.all(10.0),
-    //     color: drink.color.withOpacity(0.7),
-    //     child: ListTile(
-    //       leading: Image.asset(drink.image, width: 50, height: 50), // Add your images in the assets folder
-    //       title: Text(drink.name),
-    //     ),
-    //   ),
-    // );
+  }
+
+}
+class CupPainter extends CustomPainter {
+  late final Drinks drink;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.brown
+      ..style = PaintingStyle.fill;
+
+    Path path = Path();
+
+    // Define the cup shape
+    path.moveTo(size.width * 0.29, size.height);
+    path.lineTo(size.width * 0.71, size.height);
+    path.lineTo(size.width * 0.9, 0);
+    path.lineTo(size.width * 0.1, 0);
+    path.close();
+
+    // Shadow Paint
+    Paint shadowPaint = Paint()
+      ..color = Colors.black.withOpacity(0.3) // Black shadow with some opacity
+      ..style = PaintingStyle.fill
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8); // Blur effect for soft shadow
+
+    // Draw shadow by translating the cup slightly down and to the right
+    canvas.save();
+    canvas.translate(4, 4); // Adjust shadow offset to match the look in the image
+    canvas.drawPath(path, shadowPaint);
+    canvas.restore();
+
+    // Draw the actual cup
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }
