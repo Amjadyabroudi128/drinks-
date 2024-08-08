@@ -20,7 +20,7 @@ class _SearchfiledState extends State<Searchfiled> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(29, 10, 20, 10),
+      padding: const EdgeInsets.fromLTRB(29, 10, 20, 1),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22.0),
