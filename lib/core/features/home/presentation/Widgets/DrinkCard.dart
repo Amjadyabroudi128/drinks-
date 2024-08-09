@@ -1,3 +1,4 @@
+import 'package:drinks/core/features/home/presentation/Widgets/translateWidget.dart';
 import 'package:drinks/core/features/models/drinkModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,20 +26,7 @@ class DrinkCard extends StatelessWidget {
                 border: Border.all(color: Colors.transparent)),
             child: Stack(
               children: [
-                Transform.translate(
-                  offset: Offset(0, -8),
-                  child: Center(
-                    child: CustomPaint(
-                      painter: CupPainter(drink: drink),
-                      child: Container(
-                        width: 120,
-                        height: 150,
-                        alignment: Alignment.center,
-                        child: Image.asset(drink.image, width: 50, height: 50),
-                      ),
-                    ),
-                  ),
-                ),
+                Translate(drink: drink),
               ],
             ),
           ),
@@ -49,5 +37,6 @@ class DrinkCard extends StatelessWidget {
     );
   }
 }
+
 
 
