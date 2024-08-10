@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Detailspage extends StatelessWidget {
-  static route() => MaterialPageRoute(
-    builder: (context) => Detailspage(),
-  );
+  static const String id = "detailsPage";
 
   const Detailspage({super.key});
 

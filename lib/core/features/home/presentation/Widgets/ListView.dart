@@ -16,7 +16,6 @@ class DrinksList extends StatelessWidget {
   Widget build(BuildContext context) {
     return  GestureDetector(
       onTap: (){
-        Navigator.push(context, Detailspage.route());
       },
       child: ScrollConfiguration(
         behavior: ScrollBehavior(),
