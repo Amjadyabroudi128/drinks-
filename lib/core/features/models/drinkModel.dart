@@ -5,13 +5,13 @@ class Drinks {
   late String image;
   late String name;
   late Color color;
-  late Color? cupColor;
+  late Color cupColor;
 
   Drinks({
     required this.name,
     required this.image,
     required this.color,
-    this.cupColor
+    required this.cupColor
  });
 
  }
