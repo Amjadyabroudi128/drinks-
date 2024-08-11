@@ -11,7 +11,7 @@ class CupPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = drink.color.withOpacity(0.97) // Darker shade of the drink color
+      ..color = drink.cupColor // Darker shade of the drink color
       ..style = PaintingStyle.fill;
 
     Path path = Path();
