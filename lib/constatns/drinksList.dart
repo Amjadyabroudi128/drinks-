@@ -4,7 +4,7 @@ import '../components/myImages.dart';
 import '../core/features/models/drinkModel.dart';
 
 final List<Drinks> drinks = [
-  Drinks(name: "cola", image: myImages.cola, color: Colors.red, cupColor: Colors.red),
+  Drinks(name: "cola", image: myImages.cola, color: Colors.pink.shade300, cupColor: Colors.red),
   Drinks(name: "dew", image: myImages.dew, color: Colors.lightGreenAccent, cupColor: Colors.lightGreenAccent),
   Drinks(name: "fanta", image: myImages.fanta, color: Colors.orange, cupColor: Colors.orange),
   Drinks(name: "pepsi", image: myImages.pepsi, color: Colors.blue, cupColor: Colors.blue),
