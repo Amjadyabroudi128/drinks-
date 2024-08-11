@@ -21,7 +21,7 @@ class DrinkCard extends StatelessWidget {
           width: 150,
           child: Container(
             decoration: BoxDecoration(
-                color: drink.color.withOpacity(0.81),
+                color: drink.color.withOpacity(0.94),
                 borderRadius: BorderRadius.circular(12.0),
                 border: Border.all(color: Colors.transparent)),
             child: Stack(
