@@ -21,7 +21,7 @@ class Translate extends StatelessWidget {
             width: 120,
             height: 150,
             alignment: Alignment.center,
-            child: Image.asset(drink.image, width: 50, height: 50),
+            child: Image.asset(drink.image, width: 69, height: 63),
           ),
         ),
       ),
