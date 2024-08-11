@@ -17,8 +17,8 @@ class DrinkCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 150,
-          width: 150,
+          height: 155,
+          width: 163,
           child: Container(
             decoration: BoxDecoration(
                 color: drink.color.withOpacity(0.91),
