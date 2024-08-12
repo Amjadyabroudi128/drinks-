@@ -22,7 +22,13 @@ class _DetailspageState extends State<Detailspage> {
       Quantity ++;
     });
   }
-
+  void decrement() {
+    setState(() {
+      if (Quantity > 0) {
+        Quantity--;
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -60,7 +66,7 @@ class _DetailspageState extends State<Detailspage> {
                               IconButton(
                                 icon: Icon(Icons.remove_circle_outline, color: Colors.white,size: 30,),
                                 onPressed: () {
-                                  // Your logic to decrease quantity or perform another action
+                                  decrement();
                                 },
                               ),
                               sizedBox(width: 9,),
