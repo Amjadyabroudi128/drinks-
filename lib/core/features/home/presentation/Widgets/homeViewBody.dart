@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'CustomAppBar.dart';
 
 class homeViewBody extends StatelessWidget {
-   const homeViewBody({super.key, this.drink});
+  static const String id = "home";
+  const homeViewBody({super.key, this.drink});
    final Drinks? drink;
    @override
    Widget build(BuildContext context) {
