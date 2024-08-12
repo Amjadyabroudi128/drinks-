@@ -1,8 +1,7 @@
 
-import 'package:drinks/components/sizedBox.dart';
+import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
-import '../../../../constatns/Constants.dart';
 import '../../models/drinkModel.dart';
 
 class Detailspage extends StatelessWidget {
@@ -31,7 +30,7 @@ class Detailspage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: drink.cupColor,
+                color: drink.color,
               ),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50, left:3 ),
@@ -39,7 +38,8 @@ class Detailspage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      detailsBar(drink: drink)
+                      detailsBar(drink: drink),
+                      CupPlace(drink: drink),
                     ],
                   ),
                 )
