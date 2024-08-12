@@ -17,17 +17,17 @@ class CupPainter extends CustomPainter {
     Path path = Path();
 
     // Define the cup shape
-    path.moveTo(size.width * 0.29, size.height);
-    path.lineTo(size.width * 0.71, size.height);
+    path.moveTo(size.width * 0.22, size.height);
+    path.lineTo(size.width * 0.75, size.height);
     path.lineTo(size.width * 0.9, 0);
     path.lineTo(size.width * 0.1, 0);
     path.close();
 
     // Shadow Paint
     Paint shadowPaint = Paint()
-      ..color = Colors.black.withOpacity(0.3) // Black shadow with some opacity
+      ..color = Colors.black.withOpacity(0.35) // Black shadow with some opacity
       ..style = PaintingStyle.fill
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8); // Blur effect for soft shadow
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4); // Blur effect for soft shadow
 
     // Draw shadow by translating the cup slightly down and to the right
     canvas.save();
