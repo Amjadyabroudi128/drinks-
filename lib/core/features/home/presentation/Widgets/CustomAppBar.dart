@@ -1,5 +1,4 @@
 import 'package:drinks/components/sizedBox.dart';
-import 'package:drinks/constatns/Constants.dart';
 import 'package:drinks/constatns/TextStyles.dart';
 import 'package:flutter/material.dart';
 

@@ -1,9 +1,7 @@
 
+import 'package:drinks/components/sizedBox.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../constatns/Constants.dart';
-import '../../../../constatns/TextStyles.dart';
-import '../../home/presentation/Widgets/myRow.dart';
 import '../../models/drinkModel.dart';
 
 class Detailspage extends StatelessWidget {
@@ -15,6 +13,7 @@ class Detailspage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    return MaterialApp(
+     debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
           children: <Widget>[
@@ -45,7 +44,7 @@ class Detailspage extends StatelessWidget {
                           IconButton(icon: goBack, onPressed: (){
                             Navigator.of(context).pop();
                           },),
-                          SizedBox(width: 3,),
+                          sizedBox(width: 3,),
                           Text(drink.name, style: TextStyle(color: Colors.white, fontSize: 30),),
                         ],
                       )
