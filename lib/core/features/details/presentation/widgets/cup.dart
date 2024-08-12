@@ -14,7 +14,7 @@ class CupPlace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 68), // Padding above the image remains
+      padding: const EdgeInsets.only(top: 47), // Padding above the image remains
       child: Stack(
         children: [
           Center(
@@ -22,7 +22,7 @@ class CupPlace extends StatelessWidget {
               painter: CupPainter(drink: drink),
               child: Container(
                 width: 120,
-                height: 180, // Adjust this if needed
+                height: 183, // Adjust this if needed
                 alignment: Alignment.center,
                 child: Image.asset(drink.image, width: 69, height: 63),
               ),
