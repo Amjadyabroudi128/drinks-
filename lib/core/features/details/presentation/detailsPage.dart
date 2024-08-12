@@ -1,5 +1,6 @@
 
 import 'package:drinks/components/sizedBox.dart';
+import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
 import '../../../../constatns/Constants.dart';
 import '../../models/drinkModel.dart';
@@ -12,9 +13,8 @@ class Detailspage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
-     debugShowCheckedModeBanner: false,
-      home: Scaffold(
+
+      return Scaffold(
         body: Stack(
           children: <Widget>[
             Container(
@@ -31,7 +31,7 @@ class Detailspage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: drink.color,
+                color: drink.cupColor,
               ),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50, left:3 ),
@@ -39,23 +39,14 @@ class Detailspage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          IconButton(icon: goBack, onPressed: (){
-                            Navigator.of(context).pop();
-                          },),
-                          sizedBox(width: 3,),
-                          Text(drink.name, style: TextStyle(color: Colors.white, fontSize: 30),),
-                        ],
-                      )
+                      detailsBar(drink: drink)
                     ],
                   ),
                 )
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 
 }
