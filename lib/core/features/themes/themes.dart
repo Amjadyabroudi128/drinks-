@@ -8,6 +8,7 @@ class AppTheme {
     borderRadius: BorderRadius.circular(22),
   );
   static final themeData = ThemeData().copyWith(
+
     inputDecorationTheme:  InputDecorationTheme(
         contentPadding: EdgeInsets.all(10.0),
         prefixIconColor: blackIcon,
