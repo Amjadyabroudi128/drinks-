@@ -1,3 +1,4 @@
+import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/constatns/Constants.dart';
 import 'package:drinks/constatns/TextStyles.dart';
 import 'package:flutter/material.dart';
@@ -19,17 +20,19 @@ class CustomAppBar extends StatelessWidget {
             text:  TextSpan(
               children: <TextSpan>[
                 TextSpan(
-                  text: 'Hello,',
+                  text: 'Hey,',
                   style: TextStyles.kFont20
                 ),
                 TextSpan(
-                  text: 'Amjad',
+                  text: '  Amjad',
                   style: TextStyles.Bold20,
                 ),
               ],
             ),
           ),
-          sizedBox,// Added space between texts
+          sizedBox(
+            height: 6,
+          ),
           RichText(
             text:  TextSpan(
               children: <TextSpan>[
@@ -38,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
                   style: TextStyles.kFont19
                 ),
                 TextSpan(
-                  text: 'like?',
+                  text: 'Like?',
                   style: TextStyles.Bold19
                 ),
               ],
