@@ -40,7 +40,7 @@ class _myIconsState extends State<myIcons> {
           Text("$Quantity", style: TextStyle(color: Colors.white, fontSize: 30),),
           sizedBox(width: 10,),
           IconButton(
-            icon: Icon(Icons.add_circle_outline, color: Colors.white,size: 30,),
+            icon: add,
             onPressed: () {
               increment();
             },
