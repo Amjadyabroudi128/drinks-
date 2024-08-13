@@ -1,4 +1,5 @@
- import 'package:drinks/constatns/TextStyles.dart';
+ import 'package:drinks/constatns/Constants.dart';
+import 'package:drinks/constatns/TextStyles.dart';
 import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +10,8 @@ class AppTheme {
   );
   static final themeData = ThemeData().copyWith(
     iconTheme: IconThemeData(
-      color: Colors.white,
-      size: 30,
+      color: defaultIconColor,
+      size: defaultIconSize,
     ),
     inputDecorationTheme:  InputDecorationTheme(
         contentPadding: EdgeInsets.all(10.0),
