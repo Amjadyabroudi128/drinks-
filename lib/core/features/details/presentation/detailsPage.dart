@@ -1,5 +1,6 @@
 
 import 'package:drinks/components/sizedBox.dart';
+import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
@@ -16,19 +17,7 @@ class Detailspage extends StatefulWidget {
 }
 
 class _DetailspageState extends State<Detailspage> {
-  int Quantity = 0;
-  void increment () {
-    setState(() {
-      Quantity ++;
-    });
-  }
-  void decrement() {
-    setState(() {
-      if (Quantity > 0) {
-        Quantity--;
-      }
-    });
-  }
+
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -59,28 +48,7 @@ class _DetailspageState extends State<Detailspage> {
                       detailsBar(drink: widget.drink),
                       CupPlace(drink: widget.drink),
                        sizedBox(height: 25,),
-                       Padding(
-                         padding: const EdgeInsets.only(left: 140),
-                         child: Row(
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.remove_circle_outline, color: Colors.white,size: 30,),
-                                onPressed: () {
-                                  decrement();
-                                },
-                              ),
-                              sizedBox(width: 9,),
-                              Text("$Quantity", style: TextStyle(color: Colors.white, fontSize: 30),),
-                              sizedBox(width: 10,),
-                              IconButton(
-                                icon: Icon(Icons.add_circle_outline, color: Colors.white,size: 30,),
-                                onPressed: () {
-                                 increment();
-                                },
-                              ),
-                            ],
-                          ),
-                       ),
+                       myIcons()
                     ],
                   ),
                 )
