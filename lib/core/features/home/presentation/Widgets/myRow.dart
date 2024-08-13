@@ -1,5 +1,7 @@
+import 'package:drinks/core/features/details/presentation/detailsPage.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../components/IconButton.dart';
 import '../../../../../constatns/Constants.dart';
 
 class myRow extends StatelessWidget {
@@ -17,9 +19,11 @@ class myRow extends StatelessWidget {
           child: Image.asset("images/amjad.jpg", height: 58,),
         ),
         Spacer(),
-        IconButton(
-          onPressed: (){},
-          icon: bag
+        MyIcons(
+          icon: bag,
+          onPressed: (){
+
+          },
         )
       ],
     );
