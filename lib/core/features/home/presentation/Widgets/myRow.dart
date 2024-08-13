@@ -1,4 +1,3 @@
-import 'package:drinks/core/features/details/presentation/detailsPage.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../components/IconButton.dart';

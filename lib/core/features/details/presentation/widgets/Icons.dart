@@ -1,3 +1,4 @@
+import 'package:drinks/components/IconButton.dart';
 import 'package:drinks/constatns/Constants.dart';
 import 'package:flutter/material.dart';
 
@@ -30,21 +31,27 @@ class _myIconsState extends State<myIcons> {
       padding: const EdgeInsets.only(left: 140),
       child: Row(
         children: [
-          IconButton(
+          MyIcons(
             icon: remove,
-            onPressed: () {
+            onPressed: (){
               decrement();
             },
           ),
           sizedBox(width: 9,),
           Text("$Quantity", style: TextStyle(color: Colors.white, fontSize: 30),),
           sizedBox(width: 10,),
-          IconButton(
+          // IconButton(
+          //   icon: add,
+          //   onPressed: () {
+          //     increment();
+          //   },
+          // ),
+          MyIcons(
             icon: add,
-            onPressed: () {
+            onPressed: (){
               increment();
             },
-          ),
+          )
         ],
       ),
     );
