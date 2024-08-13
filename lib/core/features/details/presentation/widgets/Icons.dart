@@ -3,6 +3,7 @@ import 'package:drinks/constatns/Constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../components/sizedBox.dart';
+import '../../../../../constatns/TextStyles.dart';
 
 class myIcons extends StatefulWidget {
   const myIcons({super.key});
@@ -38,14 +39,8 @@ class _myIconsState extends State<myIcons> {
             },
           ),
           sizedBox(width: 9,),
-          Text("$Quantity", style: TextStyle(color: Colors.white, fontSize: 30),),
+          Text("$Quantity", style: TextStyles.quantity),
           sizedBox(width: 10,),
-          // IconButton(
-          //   icon: add,
-          //   onPressed: () {
-          //     increment();
-          //   },
-          // ),
           MyIcons(
             icon: add,
             onPressed: (){

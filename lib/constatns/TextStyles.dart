@@ -20,4 +20,8 @@ import 'package:flutter/material.dart';
      fontSize: 19,
      fontWeight: FontWeight.w600
    );
+   static TextStyle quantity = const TextStyle(
+       color: Colors.white,
+       fontSize: 30)
+   ;
  }
