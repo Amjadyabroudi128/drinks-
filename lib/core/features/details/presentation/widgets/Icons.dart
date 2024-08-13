@@ -1,3 +1,4 @@
+import 'package:drinks/constatns/Constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../components/sizedBox.dart';
@@ -30,7 +31,7 @@ class _myIconsState extends State<myIcons> {
       child: Row(
         children: [
           IconButton(
-            icon: Icon(Icons.remove_circle_outline, color: Colors.white,size: 30,),
+            icon: remove,
             onPressed: () {
               decrement();
             },
