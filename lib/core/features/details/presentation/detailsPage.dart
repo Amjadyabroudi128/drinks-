@@ -28,94 +28,109 @@ class _DetailspageState extends State<Detailspage> {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: MediaQuery.of(context).size.height * 0.50,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: widget.drink.color,
-                ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 50, left:3 ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          detailsBar(drink: widget.drink),
-                          CupPlace(drink: widget.drink),
-                           sizedBox(height: 25,),
-                           myIcons(),
-                        ],
-                      ),
-                    ),
-                  )
-              ),
-              Container(
-                child:  Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          DrinkSizeOption(size: 'Small', image: widget.drink.image, drink: widget.drink ,),
-                          DrinkSizeOption(size: 'Medium', image: widget.drink.image, drink: widget.drink,),
-                          DrinkSizeOption(size: 'Large', image: widget.drink.image, drink: widget.drink, ),
-                        ],
-                      ),
-                      SizedBox(height: 90,),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 270),
-                        child: RichText(
-                          text:  const TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: '500',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 36
-                                )
-                              ),
-                              TextSpan(
-                                text: ' ml',
-                                style: TextStyle(
-                                  color: Colors.black45,
-                                    fontSize: 27
-                                )
-                              ),
-                            ],
-                          ),
+        body: ScrollConfiguration(
+          behavior: ScrollBehavior(),
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.50,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: widget.drink.color,
+                  ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 50, left:3 ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            detailsBar(drink: widget.drink),
+                            CupPlace(drink: widget.drink),
+                             sizedBox(height: 25,),
+                             myIcons(),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 10,),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 320),
-                        child: Text("£5", style: TextStyle(fontSize: 32),),
-                      ),
-                      Container(
-                          decoration: BoxDecoration(
-                              color: widget.drink.color,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          height: 88,
-                          width: 70,
-                          child: MyIcons(
-                            icon: bag,
-                            size: 42,
-                            onPressed: (){
-                            },
-                          )
-                      ),
-                    ],
-                  ),
-                )
-              ),
-            ],
+                    )
+                ),
+                Container(
+                  child:  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            DrinkSizeOption(size: 'Small', image: widget.drink.image, drink: widget.drink ,),
+                            DrinkSizeOption(size: 'Medium', image: widget.drink.image, drink: widget.drink,),
+                            DrinkSizeOption(size: 'Large', image: widget.drink.image, drink: widget.drink, ),
+                          ],
+                        ),
+                        SizedBox(height: 90,),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start, // Aligns text and icon at the top
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start, // Aligns children to the start of the column
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),  // Add spacing between the RichText and Text widgets
+                                  child: RichText(
+                                    text: const TextSpan(
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                          text: '500',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 36,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: ' ml',
+                                          style: TextStyle(
+                                            color: Colors.black45,
+                                            fontSize: 27,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  "£5",
+                                  style: TextStyle(fontSize: 32),
+                                ),
+                              ],
+                            ),
+                            Spacer(), // Add spacing between the text and the icon
+                            Container(
+                              decoration: BoxDecoration(
+                                color: widget.drink.color,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              height: 88,
+                              width: 70,
+                              child: MyIcons(
+                                icon: bag,
+                                size: 42,
+                                onPressed: () {
+                                  // Your onPressed logic here
+                                },
+                              ),
+                            ),
+                          ],
+                        )
+
+                      ],
+                    ),
+                  )
+                ),
+              ],
+            ),
           ),
         ),
       );
