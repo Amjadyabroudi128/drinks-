@@ -1,14 +1,11 @@
 
 import 'dart:ui';
-
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
-import '../../../../components/IconButton.dart';
-import '../../../../constatns/Constants.dart';
 import '../../home/presentation/Widgets/CupPainter.dart';
 import '../../models/drinkModel.dart';
 
