@@ -1,9 +1,13 @@
 
+import 'dart:ui';
+
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
+import '../../../../components/IconButton.dart';
+import '../../../../constatns/Constants.dart';
 import '../../home/presentation/Widgets/CupPainter.dart';
 import '../../models/drinkModel.dart';
 
@@ -62,7 +66,51 @@ class _DetailspageState extends State<Detailspage> {
                           DrinkSizeOption(size: 'Medium', image: widget.drink.image, drink: widget.drink,),
                           DrinkSizeOption(size: 'Large', image: widget.drink.image, drink: widget.drink, ),
                         ],
-                      )
+                      ),
+                      SizedBox(height: 90,),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 270),
+                        child: RichText(
+                          text:  const TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: '500',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 36
+                                )
+                              ),
+                              TextSpan(
+                                text: ' ml',
+                                style: TextStyle(
+                                  color: Colors.black45,
+                                    fontSize: 27
+                                )
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 320),
+                        child: Text("£5", style: TextStyle(fontSize: 32),),
+                      ),
+                      Container(
+                          decoration: BoxDecoration(
+                              color: widget.drink.color,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                          height: 88,
+                          width: 70,
+                          child: MyIcons(
+                            icon: bag,
+                            size: 42,
+                            onPressed: (){
+                            },
+                          )
+                      ),
                     ],
                   ),
                 )
@@ -73,65 +121,92 @@ class _DetailspageState extends State<Detailspage> {
       );
   }
 }
-class DrinkSizeOption extends StatelessWidget {
+class DrinkSizeOption extends StatefulWidget {
   final String size;
   final Drinks drink;
   final String image;
 
   const DrinkSizeOption({
-    super.key,
+    Key? key,
     required this.size,
     required this.drink,
     required this.image,
-  });
+  }) : super(key: key);
+
+  @override
+  _DrinkSizeOptionState createState() => _DrinkSizeOptionState();
+}
+
+class _DrinkSizeOptionState extends State<DrinkSizeOption> {
+  String? selectedSize;
+
+  // Function to handle selection
+  void selectSize(String size) {
+    setState(() {
+      selectedSize = size;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     // Map size to corresponding width and height
-    Size getSizeDimensions() {
+    Size getSizeDimensions(String size) {
       switch (size.toLowerCase()) {
         case 'small':
-          return Size(30.0, 40.0); // width, height for small
+          return Size(30.0, 40.0);
         case 'medium':
-          return Size(40.0, 60.0); // width, height for medium
+          return Size(40.0, 60.0);
         case 'large':
-          return Size(50.0, 80.0); // width, height for large
+          return Size(50.0, 80.0);
         default:
-          return Size(30.0, 40.0); // default dimensions if size doesn't match
+          return Size(30.0, 40.0);
       }
     }
 
-    final sizeDimensions = getSizeDimensions();
-
     // Scaling factor to make the image smaller inside the cup
-    final double scaleFactor = 0.7; // Adjust this value as needed
+    final double scaleFactor = 0.7;
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => selectSize(widget.size),
       child: Container(
+
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Column(
           children: <Widget>[
-            CustomPaint(
-              painter: CupPainter(drink: drink),
-              child: Container(
-                color: Colors.transparent,
-                alignment: Alignment.center,
-                child: Transform.scale(
-                  scale: scaleFactor,
-                  child: Image.asset(
-                    drink.image,
-                    width: sizeDimensions.width,
-                    height: sizeDimensions.height,
-                  ),
+            // Apply blur effect to non-selected items
+            if (selectedSize != null && selectedSize != widget.size)
+              ClipRect(
+                child: ImageFiltered(
+                  imageFilter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                  child: _buildCupImage(getSizeDimensions(widget.size), scaleFactor),
                 ),
-              ),
-            ),
-            Text(size, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+              )
+            else
+              _buildCupImage(getSizeDimensions(widget.size), scaleFactor),
+            Text(widget.size, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
           ],
+        ),
+      ),
+    );
+  }
+
+  // Widget to build the cup image
+  Widget _buildCupImage(Size sizeDimensions, double scaleFactor) {
+    return CustomPaint(
+      painter: CupPainter(drink: widget.drink),
+      child: Container(
+        color: Colors.transparent,
+        alignment: Alignment.center,
+        child: Transform.scale(
+          scale: scaleFactor,
+          child: Image.asset(
+            widget.drink.image,
+            width: sizeDimensions.width,
+            height: sizeDimensions.height,
+          ),
         ),
       ),
     );
