@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
+import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
@@ -70,60 +71,7 @@ class _DetailspageState extends State<Detailspage> {
                           ],
                         ),
                         SizedBox(height: 90,),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Aligns text and icon at the top
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start, // Aligns children to the start of the column
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 10),  // Add spacing between the RichText and Text widgets
-                                  child: RichText(
-                                    text: const TextSpan(
-                                      children: <TextSpan>[
-                                        TextSpan(
-                                          text: '500',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 36,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: ' ml',
-                                          style: TextStyle(
-                                            color: Colors.black45,
-                                            fontSize: 27,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "£5",
-                                  style: TextStyle(fontSize: 32),
-                                ),
-                              ],
-                            ),
-                            Spacer(), // Add spacing between the text and the icon
-                            Container(
-                              decoration: BoxDecoration(
-                                color: widget.drink.color,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              height: 88,
-                              width: 70,
-                              child: MyIcons(
-                                icon: bag,
-                                size: 42,
-                                onPressed: () {
-                                  // Your onPressed logic here
-                                },
-                              ),
-                            ),
-                          ],
-                        )
+                        Rowdetails(drink: widget.drink)
 
                       ],
                     ),
