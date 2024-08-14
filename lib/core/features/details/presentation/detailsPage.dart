@@ -4,6 +4,7 @@ import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
+import '../../home/presentation/Widgets/CupPainter.dart';
 import '../../models/drinkModel.dart';
 
 class Detailspage extends StatefulWidget {
@@ -50,7 +51,21 @@ class _DetailspageState extends State<Detailspage> {
                   )
               ),
               Container(
-                child: Center(child: Text("Hello" , )),
+                child:  Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          DrinkSizeOption(size: 'Small', image: widget.drink.image, drink: widget.drink ,),
+                          DrinkSizeOption(size: 'Medium', image: widget.drink.image, drink: widget.drink,),
+                          DrinkSizeOption(size: 'Large', image: widget.drink.image, drink: widget.drink, ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
               ),
             ],
           ),
@@ -58,4 +73,59 @@ class _DetailspageState extends State<Detailspage> {
       );
   }
 }
+class DrinkSizeOption extends StatelessWidget {
+  final String size;
+  final Drinks drink;
+  final String image;
 
+  const DrinkSizeOption({
+    super.key,
+    required this.size,
+    required this.drink,
+    required this.image,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // Map size to corresponding height
+    double getSizeHeight() {
+      switch (size.toLowerCase()) {
+        case 'small':
+          return 40.0;
+        case 'medium':
+          return 60.0;
+        case 'large':
+          return 80.0;
+        default:
+          return 40.0; // default height if size doesn't match
+      }
+    }
+
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Column(
+          children: <Widget>[
+            CustomPaint(
+              painter: CupPainter(drink: drink),
+              child: Container(
+                color: Colors.transparent,
+                alignment: Alignment.center,
+                child: Image.asset(
+                  drink.image,
+                  width: 20,
+                  height: getSizeHeight(),
+                ),
+              ),
+            ),
+            Text(size, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
+          ],
+        ),
+      ),
+    );
+  }
+}
