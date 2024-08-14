@@ -17,7 +17,9 @@ class Detailspage extends StatefulWidget {
 }
 
 class _DetailspageState extends State<Detailspage> {
+  String selectedSize = 'medium'; // Default selected size
 
+  late int price;
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -28,9 +30,15 @@ class _DetailspageState extends State<Detailspage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.white
+                color: Colors.transparent
               ),
-
+              child: Center(
+                child: Column(
+                  children: [
+                    Text("hello")
+                  ],
+                ),
+              ),
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.50,
@@ -41,15 +49,18 @@ class _DetailspageState extends State<Detailspage> {
               ),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50, left:3 ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      detailsBar(drink: widget.drink),
-                      CupPlace(drink: widget.drink),
-                       sizedBox(height: 25,),
-                       myIcons()
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        detailsBar(drink: widget.drink),
+                        CupPlace(drink: widget.drink),
+                         sizedBox(height: 25,),
+                         myIcons(),
+                    
+                      ],
+                    ),
                   ),
                 )
             ),

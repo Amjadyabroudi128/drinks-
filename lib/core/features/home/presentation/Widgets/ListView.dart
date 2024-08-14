@@ -31,7 +31,7 @@ class DrinksList extends StatelessWidget {
                 );
               },
               child: Transform.translate(
-                offset: Offset(0, index.isEven ? -28 : -5),
+                offset: Offset(0, index.isEven ? -28 : -9),
                 child: DrinkCard(drink: drinks[index]),
               ),
             );
