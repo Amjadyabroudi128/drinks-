@@ -87,19 +87,24 @@ class DrinkSizeOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Map size to corresponding height
-    double getSizeHeight() {
+    // Map size to corresponding width and height
+    Size getSizeDimensions() {
       switch (size.toLowerCase()) {
         case 'small':
-          return 40.0;
+          return Size(30.0, 40.0); // width, height for small
         case 'medium':
-          return 60.0;
+          return Size(40.0, 60.0); // width, height for medium
         case 'large':
-          return 80.0;
+          return Size(50.0, 80.0); // width, height for large
         default:
-          return 40.0; // default height if size doesn't match
+          return Size(30.0, 40.0); // default dimensions if size doesn't match
       }
     }
+
+    final sizeDimensions = getSizeDimensions();
+
+    // Scaling factor to make the image smaller inside the cup
+    final double scaleFactor = 0.7; // Adjust this value as needed
 
     return GestureDetector(
       onTap: () {},
@@ -115,10 +120,13 @@ class DrinkSizeOption extends StatelessWidget {
               child: Container(
                 color: Colors.transparent,
                 alignment: Alignment.center,
-                child: Image.asset(
-                  drink.image,
-                  width: 20,
-                  height: getSizeHeight(),
+                child: Transform.scale(
+                  scale: scaleFactor,
+                  child: Image.asset(
+                    drink.image,
+                    width: sizeDimensions.width,
+                    height: sizeDimensions.height,
+                  ),
                 ),
               ),
             ),
