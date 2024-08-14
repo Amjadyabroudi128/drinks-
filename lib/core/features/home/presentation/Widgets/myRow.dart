@@ -20,8 +20,9 @@ class myRow extends StatelessWidget {
         Spacer(),
         MyIcons(
           icon: bag,
+          size: 42,
+          clr: Colors.black,
           onPressed: (){
-
           },
         )
       ],
