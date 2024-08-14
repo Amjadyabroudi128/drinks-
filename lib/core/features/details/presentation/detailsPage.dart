@@ -23,48 +23,37 @@ class _DetailspageState extends State<Detailspage> {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
-        body: Stack(
-          children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.transparent
-              ),
-              child: Center(
-                child: Column(
-                  children: [
-                    Text("hello")
-                  ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: MediaQuery.of(context).size.height * 0.50,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: widget.drink.color,
                 ),
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.50,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: widget.drink.color,
-              ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 50, left:3 ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        detailsBar(drink: widget.drink),
-                        CupPlace(drink: widget.drink),
-                         sizedBox(height: 25,),
-                         myIcons(),
-                    
-                      ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 50, left:3 ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          detailsBar(drink: widget.drink),
+                          CupPlace(drink: widget.drink),
+                           sizedBox(height: 25,),
+                           myIcons(),
+                        ],
+                      ),
                     ),
-                  ),
-                )
-            ),
-          ],
+                  )
+              ),
+              Container(
+                child: Center(child: Text("Hello" , )),
+              ),
+            ],
+          ),
         ),
       );
   }

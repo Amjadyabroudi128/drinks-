@@ -36,7 +36,7 @@ class CupPlace extends StatelessWidget {
             child: Divider(
               color: Colors.black45,
               thickness: 4,
-              indent: 169,
+              indent: 180,
               endIndent: 140,
             ),
           ),
