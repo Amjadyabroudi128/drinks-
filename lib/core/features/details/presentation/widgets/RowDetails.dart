@@ -76,7 +76,7 @@ class RowDetails extends StatelessWidget {
                   ),
                   child:  Text(
                     "$Quantity",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    style: TextStyles.bagQuantity,
                   ),
                 ),
 

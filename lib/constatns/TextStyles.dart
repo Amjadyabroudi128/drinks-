@@ -35,4 +35,7 @@ import 'package:flutter/material.dart';
    static TextStyle price = TextStyle (
      fontSize: 32
    );
+   static TextStyle bagQuantity = const TextStyle(
+       color: Colors.white,
+       fontSize: 18);
  }
