@@ -1,52 +1,38 @@
-import 'package:drinks/components/IconButton.dart';
-import 'package:drinks/constatns/Constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../components/sizedBox.dart';
+import '../../../../../components/IconButton.dart';
+import '../../../../../constatns/Constants.dart';
 import '../../../../../constatns/TextStyles.dart';
 
-class myIcons extends StatefulWidget {
-  const myIcons({super.key});
+class RowIcons extends StatelessWidget {
+  final int quantity;
+  final VoidCallback onIncrement;
+  final VoidCallback onDecrement;
 
-  @override
-  State<myIcons> createState() => _myIconsState();
-}
+  const RowIcons({
+    Key? key,
+    required this.quantity,
+    required this.onIncrement,
+    required this.onDecrement,
+  }) : super(key: key);
 
-class _myIconsState extends State<myIcons> {
-  int Quantity = 0;
-  void increment () {
-    setState(() {
-      Quantity ++;
-    });
-  }
-  void decrement() {
-    setState(() {
-      if (Quantity > 0) {
-        Quantity--;
-      }
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 140),
+      padding: const EdgeInsets.only(left: 140.0),
       child: Row(
         children: [
           MyIcons(
             icon: remove,
-            onPressed: (){
-              decrement();
-            },
+            onPressed: onDecrement,
           ),
-          sizedBox(width: 9,),
-          Text("$Quantity", style: TextStyles.quantity),
-          sizedBox(width: 10,),
+          SizedBox(width: 9),
+          Text("$quantity", style: TextStyles.quantity),
+          SizedBox(width: 10),
           MyIcons(
             icon: add,
-            onPressed: (){
-              increment();
-            },
-          )
+            onPressed: onIncrement,
+          ),
         ],
       ),
     );
