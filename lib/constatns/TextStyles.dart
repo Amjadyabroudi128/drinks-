@@ -32,4 +32,7 @@ import 'package:flutter/material.dart';
      color: Colors.black45,
      fontSize: 27,
    );
+   static TextStyle price = TextStyle (
+     fontSize: 32
+   );
  }

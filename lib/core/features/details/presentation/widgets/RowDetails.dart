@@ -44,7 +44,7 @@ class RowDetails extends StatelessWidget {
             ),
             Text(
               "£${price * Quantity}",
-              style: TextStyle(fontSize: 32),
+              style: TextStyles.price,
             ),
           ],
         ),
