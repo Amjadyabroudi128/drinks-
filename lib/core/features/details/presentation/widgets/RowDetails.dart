@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../components/IconButton.dart';
 import '../../../../../constatns/Constants.dart';
+import '../../../../../constatns/TextStyles.dart';
 import '../detailsPage.dart';
 
 class RowDetails extends StatelessWidget {
@@ -27,15 +28,11 @@ class RowDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 10),  // Add spacing between the RichText and Text widgets
               child: RichText(
-                text: const TextSpan(
+                text:  TextSpan(
                   children: <TextSpan>[
                     TextSpan(
                       text: '500',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 36,
-                      ),
+                      style: TextStyles.volume
                     ),
                     TextSpan(
                       text: ' ml',
