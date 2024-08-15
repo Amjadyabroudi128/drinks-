@@ -2,11 +2,19 @@ import 'package:flutter/material.dart';
 
 import '../../../../../components/IconButton.dart';
 import '../../../../../constatns/Constants.dart';
-import '../../../models/drinkModel.dart';
+import '../detailsPage.dart';
 
-class Rowdetails extends StatelessWidget {
-  const Rowdetails({super.key, required this.drink});
-  final Drinks drink;
+class RowDetails extends StatelessWidget {
+  const RowDetails({
+    super.key,
+    required this.price,
+    required this.Quantity,
+    required this.widget,
+  });
+
+  final int price;
+  final int Quantity;
+  final Detailspage widget;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +49,7 @@ class Rowdetails extends StatelessWidget {
               ),
             ),
             Text(
-              "£5",
+              "£${price * Quantity}",
               style: TextStyle(fontSize: 32),
             ),
           ],
@@ -51,7 +59,7 @@ class Rowdetails extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: drink.color,
+                  color: widget.drink.color,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 height: 88,
@@ -60,7 +68,6 @@ class Rowdetails extends StatelessWidget {
                   icon: bag,
                   size: 42,
                   onPressed: () {
-                    // Your onPressed logic here
                   },
                 ),
               ),
@@ -70,11 +77,11 @@ class Rowdetails extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(6),
                   decoration:  BoxDecoration(
-                    color: drink.color,
+                    color: widget.drink.color,
                     shape: BoxShape.circle,
                   ),
-                  child: const Text(
-                    '1',
+                  child:  Text(
+                    "$Quantity",
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
