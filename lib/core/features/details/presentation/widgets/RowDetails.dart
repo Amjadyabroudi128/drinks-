@@ -9,79 +9,79 @@ class RowDetails extends StatelessWidget {
   const RowDetails({
     super.key,
     required this.price,
-    required this.Quantity,
+    required this.volume,
+    required this.quantity,
     required this.widget,
   });
 
   final int price;
-  final int Quantity;
+  final int volume;
+  final int quantity;
   final Detailspage widget;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start, // Aligns text and icon at the top
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Aligns children to the start of the column
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(bottom: 10),  // Add spacing between the RichText and Text widgets
+              padding: const EdgeInsets.only(bottom: 10),
               child: RichText(
-                text:  TextSpan(
+                text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text: '500',
-                      style: TextStyles.volume
+                      text: '$volume',
+                      style: TextStyles.volume,
                     ),
                     TextSpan(
                       text: ' ml',
-                      style: TextStyles.mL
+                      style: TextStyles.mL,
                     ),
                   ],
                 ),
               ),
             ),
             Text(
-              "£${price * Quantity}",
+              "£${(price * quantity)}",
               style: TextStyles.price,
             ),
           ],
         ),
         Spacer(), // Add spacing between the text and the icon
         Stack(
-            children: [
-              Container(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: widget.drink.color,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              height: 88,
+              width: 80,
+              child: MyIcons(
+                icon: bag,
+                size: 42,
+                onPressed: () {},
+              ),
+            ),
+            Positioned(
+              top: -7,
+              right: 2,
+              child: Container(
+                padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: widget.drink.color,
-                  borderRadius: BorderRadius.circular(10),
+                  shape: BoxShape.circle,
                 ),
-                height: 88,
-                width: 80,
-                child: MyIcons(
-                  icon: bag,
-                  size: 42,
-                  onPressed: () {
-                  },
+                child: Text(
+                  "$quantity",
+                  style: TextStyles.bagQuantity,
                 ),
               ),
-              Positioned(
-                top: -7,
-                right: 2,
-                child: Container(
-                  padding: const EdgeInsets.all(6),
-                  decoration:  BoxDecoration(
-                    color: widget.drink.color,
-                    shape: BoxShape.circle,
-                  ),
-                  child:  Text(
-                    "$Quantity",
-                    style: TextStyles.bagQuantity,
-                  ),
-                ),
-
-              )
-            ]
+            ),
+          ],
         ),
       ],
     );
