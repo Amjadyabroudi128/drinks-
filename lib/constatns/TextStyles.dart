@@ -22,6 +22,10 @@ import 'package:flutter/material.dart';
    );
    static TextStyle quantity = const TextStyle(
        color: Colors.white,
-       fontSize: 30)
-   ;
+       fontSize: 30);
+   static TextStyle volume = const TextStyle(
+     color: Colors.black,
+     fontWeight: FontWeight.bold,
+     fontSize: 36,
+   );
  }
