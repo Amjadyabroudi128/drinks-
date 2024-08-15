@@ -3,12 +3,10 @@ import 'dart:ui';
 
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
+import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:flutter/material.dart';
-import '../../../../components/IconButton.dart';
-import '../../../../constatns/Constants.dart';
-import '../../../../constatns/TextStyles.dart';
 import '../../home/presentation/Widgets/CupPainter.dart';
 import '../../models/drinkModel.dart';
 
@@ -53,7 +51,7 @@ class _DetailspageState extends State<Detailspage> {
             child: Column(
               children: <Widget>[
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.50,
+                  height: MediaQuery.of(context).size.height * 0.54,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -69,28 +67,7 @@ class _DetailspageState extends State<Detailspage> {
                             detailsBar(drink: widget.drink),
                             CupPlace(drink: widget.drink),
                              sizedBox(height: 25,),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 140),
-                              child: Row(
-                                children: [
-                                  MyIcons(
-                                    icon: remove,
-                                    onPressed: (){
-                                      decrement();
-                                    },
-                                  ),
-                                  sizedBox(width: 9,),
-                                  Text("$Quantity", style: TextStyles.quantity),
-                                  sizedBox(width: 10,),
-                                  MyIcons(
-                                    icon: add,
-                                    onPressed: (){
-                                      increment();
-                                    },
-                                  )
-                                ],
-                              ),
-                            )
+                            RowIcons(quantity: Quantity, onIncrement: increment, onDecrement: decrement)
                           ],
                         ),
                       ),
@@ -110,79 +87,7 @@ class _DetailspageState extends State<Detailspage> {
                           ],
                         ),
                         SizedBox(height: 90,),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Aligns text and icon at the top
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start, // Aligns children to the start of the column
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 10),  // Add spacing between the RichText and Text widgets
-                                  child: RichText(
-                                    text: const TextSpan(
-                                      children: <TextSpan>[
-                                        TextSpan(
-                                          text: '500',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 36,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: ' ml',
-                                          style: TextStyle(
-                                            color: Colors.black45,
-                                            fontSize: 27,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "£${price * Quantity}",
-                                  style: TextStyle(fontSize: 32),
-                                ),
-                              ],
-                            ),
-                            Spacer(), // Add spacing between the text and the icon
-                            Stack(
-                              children: [
-                                Container(
-                                decoration: BoxDecoration(
-                                  color: widget.drink.color,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                height: 88,
-                                width: 80,
-                                child: MyIcons(
-                                  icon: bag,
-                                  size: 42,
-                                  onPressed: () {
-                                  },
-                                ),
-                              ),
-                                Positioned(
-                                  top: -7,
-                                  right: 2,
-                                  child: Container(
-                                      padding: const EdgeInsets.all(6),
-                                      decoration:  BoxDecoration(
-                                        color: widget.drink.color,
-                                        shape: BoxShape.circle,
-                                      ),
-                                    child:  Text(
-                                      "$Quantity",
-                                      style: TextStyle(color: Colors.white, fontSize: 16),
-                                    ),
-                                  ),
-
-                                )
-                              ]
-                            ),
-                          ],
-                        )
+                        RowDetails(price: price, Quantity: Quantity, widget: widget)
 
                       ],
                     ),
