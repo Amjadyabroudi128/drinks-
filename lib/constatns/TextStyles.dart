@@ -28,4 +28,8 @@ import 'package:flutter/material.dart';
      fontWeight: FontWeight.bold,
      fontSize: 36,
    );
+   static TextStyle mL = const  TextStyle(
+     color: Colors.black45,
+     fontSize: 27,
+   );
  }

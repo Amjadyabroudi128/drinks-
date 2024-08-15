@@ -36,10 +36,7 @@ class RowDetails extends StatelessWidget {
                     ),
                     TextSpan(
                       text: ' ml',
-                      style: TextStyle(
-                        color: Colors.black45,
-                        fontSize: 27,
-                      ),
+                      style: TextStyles.mL
                     ),
                   ],
                 ),
