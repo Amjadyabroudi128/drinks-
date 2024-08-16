@@ -6,6 +6,7 @@ import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
+import '../../enums/Enums.dart';
 import '../../home/presentation/Widgets/CupPainter.dart';
 import '../../models/drinkModel.dart';
 
@@ -20,7 +21,7 @@ class Detailspage extends StatefulWidget {
 }
 
 class _DetailspageState extends State<Detailspage> {
-  String _selectedSize = 'medium';
+  DrinkSize _selectedSize = DrinkSize.small;
   int quantity = 1;
   int price = 2;
   int volume = 500;
@@ -43,18 +44,17 @@ class _DetailspageState extends State<Detailspage> {
     });
   }
 
-  // Method to update price and volume based on size
-  void _updatePriceAndVolume(String size) {
-    switch (size.toLowerCase()) {
-      case 'small':
+  void _updatePriceAndVolume(DrinkSize size) {
+    switch (size) {
+      case DrinkSize.small:
         price = 2;
         volume = 250;
         break;
-      case 'medium':
+      case DrinkSize.medium:
         price = 4;
         volume = 500;
         break;
-      case 'large':
+      case DrinkSize.large:
         price = 6;
         volume = 750;
         break;
@@ -110,12 +110,10 @@ class _DetailspageState extends State<Detailspage> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: ['small', 'medium', 'large']
-                            .map((size) {
+                        children: DrinkSize.values.map((size) {
                           bool isSelected = _selectedSize == size;
                           return _buildSizeOption(size, isSelected);
-                        })
-                            .toList(),
+                        }).toList(),
                       ),
                       sizedBox(height: 90,),
                       RowDetails(price: price, volume: volume, quantity: quantity,widget: widget,),
@@ -130,20 +128,17 @@ class _DetailspageState extends State<Detailspage> {
     );
   }
 
-  Widget _buildSizeOption(String size, bool isSelected) {
-    Size getSizeDimensions(String size) {
-      switch (size.toLowerCase()) {
-        case 'small':
-          return Size(48.0, 65.0);
-        case 'medium':
-          return Size(60.0, 80.0);
-        case 'large':
-          return Size(80.0, 90.0);
-        default:
-          return Size(30.0, 40.0);
+  Widget _buildSizeOption(DrinkSize size, bool isSelected) {
+    Size getSizeDimensions(DrinkSize size) {
+      if (size == DrinkSize.small ) {
+        return Size(48, 65);
+      } if (size == DrinkSize.medium) {
+        return Size(60.0, 80.0);
+      } if (size == DrinkSize.large) {
+        return Size(80.0, 90.0);
       }
+      return Size(30.0, 40.0);
     }
-
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -166,9 +161,9 @@ class _DetailspageState extends State<Detailspage> {
               child: Image.asset(widget.drink.image, width: 32, height: 63),
             ),
           ),
-          SizedBox(height: 8.0),
+          sizedBox(height: 8,),
           Text(
-            size,
+            size.toString().split('.').last,
             style: TextStyle(
               color: isSelected ? widget.drink.color : unSelected,
               fontSize: 18.0,
