@@ -19,13 +19,10 @@ class Detailspage extends StatefulWidget {
 }
 
 class _DetailspageState extends State<Detailspage> {
-  String _selectedSize = 'medium'; // Default selected size
-  bool _showAllSizes = false; // Controls visibility of unselected sizes
-  bool _showTopCup = false; // Controls visibility of the cup in the top container
+  String _selectedSize = 'medium';
   int quantity = 1;
-  int price = 2; // Changed to double for fractional prices
-  int volume = 500; // Default volume
-  double _cupPosition = -200;
+  int price = 2;
+  int volume = 500;
   @override
   void initState() {
     super.initState();
@@ -88,29 +85,26 @@ class _DetailspageState extends State<Detailspage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         detailsBar(drink: widget.drink),
-                        Visibility(
-                          visible: _showTopCup, // Cup visibility controlled by _showTopCup
-                          child: Column(
-                            children: [
-                              SizedBox(height: 50,),
-                              Center(
-                                child: CustomPaint(
-                                  painter: CupPainter(drink: widget.drink),
-                                  child: Container(
-                                    width: 120.0,
-                                    height: 160.0,
-                                    alignment: Alignment.center,
-                                    child: Image.asset(
-                                      widget.drink.image,
-                                      width: 50,
-                                      height: 126,
-                                    ),
+                        Column(
+                          children: [
+                            SizedBox(height: 50,),
+                            Center(
+                              child: CustomPaint(
+                                painter: CupPainter(drink: widget.drink),
+                                child: Container(
+                                  width: 120.0,
+                                  height: 160.0,
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    widget.drink.image,
+                                    width: 50,
+                                    height: 126,
                                   ),
                                 ),
                               ),
-                              sizedBox(height: 25),
-                            ],
-                          ),
+                            ),
+                            sizedBox(height: 25),
+                          ],
                         ),
                         RowIcons(
                           quantity: quantity,
@@ -132,11 +126,7 @@ class _DetailspageState extends State<Detailspage> {
                         children: ['small', 'medium', 'large']
                             .map((size) {
                           bool isSelected = _selectedSize == size;
-                          return AnimatedOpacity(
-                            opacity: isSelected || _showAllSizes ? 1.0 : 0.0,
-                            duration: Duration(milliseconds: 300),
-                            child: _buildSizeOption(size, isSelected),
-                          );
+                          return _buildSizeOption(size, isSelected);
                         })
                             .toList(),
                       ),
@@ -180,9 +170,6 @@ class _DetailspageState extends State<Detailspage> {
             _updatePriceAndVolume(size); // Update price and volume based on selected size
             quantity = 0;
           }
-          _showAllSizes = true; // Show all sizes when a size is selected
-          _showTopCup = true; // Make the top cup visible when a size is selected
-          _cupPosition = -200;
         });
       },
 
