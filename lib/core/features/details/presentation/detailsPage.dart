@@ -130,7 +130,7 @@ class _DetailspageState extends State<Detailspage> {
                         })
                             .toList(),
                       ),
-                      SizedBox(height: 90),
+                      sizedBox(height: 90,),
                       RowDetails(
                         price: price,
                         volume: volume, // Pass the updated volume
