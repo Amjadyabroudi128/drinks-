@@ -133,7 +133,7 @@ class _DetailspageState extends State<Detailspage> {
                       sizedBox(height: 90,),
                       RowDetails(
                         price: price,
-                        volume: volume, // Pass the updated volume
+                        volume: volume,
                         quantity: quantity,
                         widget: widget,
                       ),
