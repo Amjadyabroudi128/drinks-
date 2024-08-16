@@ -118,12 +118,7 @@ class _DetailspageState extends State<Detailspage> {
                             .toList(),
                       ),
                       sizedBox(height: 90,),
-                      RowDetails(
-                        price: price,
-                        volume: volume,
-                        quantity: quantity,
-                        widget: widget,
-                      ),
+                      RowDetails(price: price, volume: volume, quantity: quantity,widget: widget,),
                     ],
                   ),
                 ),

@@ -33,7 +33,7 @@ class _RowDetailsState extends State<RowDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.only(bottom: 10, left: 10),
               child: RichText(
                 text: TextSpan(
                   children: <TextSpan>[
@@ -49,13 +49,16 @@ class _RowDetailsState extends State<RowDetails> {
                 ),
               ),
             ),
-            Text(
-              "£${(widget.price * widget.quantity)}",
-              style: TextStyles.price,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10, left: 10),
+              child: Text(
+                "£${(widget.price * widget.quantity)}",
+                style: TextStyles.price,
+              ),
             ),
           ],
         ),
-        Spacer(), // Add spacing between the text and the icon
+        Spacer(),
         Stack(
           children: [
             Container(
