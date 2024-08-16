@@ -45,23 +45,8 @@ class _DetailspageState extends State<Detailspage> {
   }
 
   void _updatePriceAndVolume(DrinkSize size) {
-    switch (size) {
-      case DrinkSize.small:
-        price = 2;
-        volume = 250;
-        break;
-      case DrinkSize.medium:
-        price = 4;
-        volume = 500;
-        break;
-      case DrinkSize.large:
-        price = 6;
-        volume = 750;
-        break;
-      default:
-        price = 2;
-        volume = 500;
-    }
+    price = size == DrinkSize.small ? 2 : size == DrinkSize.medium ? 4 : 6;
+    volume = size == DrinkSize.small ? 250 : size == DrinkSize.medium ? 500 : 750;
   }
   @override
   Widget build(BuildContext context) {
