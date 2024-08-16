@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
+import 'package:drinks/core/features/details/presentation/widgets/cupDetails.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
@@ -88,21 +89,7 @@ class _DetailspageState extends State<Detailspage> {
                         Column(
                           children: [
                             SizedBox(height: 50,),
-                            Center(
-                              child: CustomPaint(
-                                painter: CupPainter(drink: widget.drink),
-                                child: Container(
-                                  width: 120.0,
-                                  height: 160.0,
-                                  alignment: Alignment.center,
-                                  child: Image.asset(
-                                    widget.drink.image,
-                                    width: 50,
-                                    height: 126,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            cupDetails(widget: widget),
                             sizedBox(height: 25),
                           ],
                         ),
