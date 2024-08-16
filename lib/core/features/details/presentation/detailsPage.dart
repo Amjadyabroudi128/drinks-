@@ -88,7 +88,7 @@ class _DetailspageState extends State<Detailspage> {
                         detailsBar(drink: widget.drink),
                         Column(
                           children: [
-                            SizedBox(height: 50,),
+                            sizedBox(height: 50,),
                             cupDetails(widget: widget),
                             sizedBox(height: 25),
                           ],
