@@ -193,7 +193,7 @@ class _DetailspageState extends State<Detailspage> {
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
             ),
           ),
-          SizedBox(height: 50),
+          sizedBox(height: 56,)
         ],
       ),
     );
