@@ -21,14 +21,18 @@ class CupPlace extends StatelessWidget {
             child: CustomPaint(
               painter: CupPainter(drink: drink),
               child: Container(
-                width: 120,
-                height: 183, // Adjust this if needed
+                width: 120.0,
+                height: 175.0,
                 alignment: Alignment.center,
-                child: Image.asset(drink.image, width: 69, height: 63),
+                child: Image.asset(
+                  drink.image,
+                  width: 56,
+                  height: 126,
+                ),
               ),
             ),
           ),
-          const Positioned(
+           Positioned(
             height: 22,
             bottom: -9, // Aligns the Divider at the bottom of the Stack
             left: -10,
