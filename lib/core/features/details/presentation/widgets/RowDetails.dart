@@ -59,41 +59,44 @@ class _RowDetailsState extends State<RowDetails> {
           ],
         ),
         Spacer(),
-        Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: widget.widget.drink.color,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              height: 88,
-              width: 80,
-              child: MyIcons(
-                icon: bag,
-                size: 42,
-                onPressed: () {
-                  setState(() {
-
-                  });
-                },
-              ),
-            ),
-            Positioned(
-              top: -7,
-              right: 2,
-              child: Container(
-                padding: const EdgeInsets.all(6),
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: Stack(
+            children: [
+              Container(
                 decoration: BoxDecoration(
                   color: widget.widget.drink.color,
-                  shape: BoxShape.circle,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                child: Text(
-                  "${widget.quantity}",
-                  style: TextStyles.bagQuantity,
+                height: 88,
+                width: 80,
+                child: MyIcons(
+                  icon: bag,
+                  size: 42,
+                  onPressed: () {
+                    setState(() {
+
+                    });
+                  },
                 ),
               ),
-            ),
-          ],
+              Positioned(
+                top: -7,
+                right: 2,
+                child: Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: widget.widget.drink.color,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Text(
+                    "${widget.quantity}",
+                    style: TextStyles.bagQuantity,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
