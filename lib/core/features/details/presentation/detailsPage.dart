@@ -163,7 +163,7 @@ class _DetailspageState extends State<Detailspage> {
               width: getSizeDimensions(size).width,
               height: getSizeDimensions(size).height,
               alignment: Alignment.center,
-              child: Image.asset(widget.drink.image, width: 25, height: 63),
+              child: Image.asset(widget.drink.image, width: 32, height: 63),
             ),
           ),
           SizedBox(height: 8.0),
