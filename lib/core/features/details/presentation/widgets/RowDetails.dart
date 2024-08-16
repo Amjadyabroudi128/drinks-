@@ -5,8 +5,8 @@ import '../../../../../constatns/Constants.dart';
 import '../../../../../constatns/TextStyles.dart';
 import '../detailsPage.dart';
 
-class RowDetails extends StatelessWidget {
-  const RowDetails({
+class RowDetails extends StatefulWidget {
+   RowDetails({
     super.key,
     required this.price,
     required this.volume,
@@ -16,9 +16,14 @@ class RowDetails extends StatelessWidget {
 
   final int price;
   final int volume;
-  final int quantity;
+  late final int quantity;
   final Detailspage widget;
 
+  @override
+  State<RowDetails> createState() => _RowDetailsState();
+}
+
+class _RowDetailsState extends State<RowDetails> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,7 +38,7 @@ class RowDetails extends StatelessWidget {
                 text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text: '$volume',
+                      text: '${widget.volume}',
                       style: TextStyles.volume,
                     ),
                     TextSpan(
@@ -45,7 +50,7 @@ class RowDetails extends StatelessWidget {
               ),
             ),
             Text(
-              "£${(price * quantity)}",
+              "£${(widget.price * widget.quantity)}",
               style: TextStyles.price,
             ),
           ],
@@ -55,7 +60,7 @@ class RowDetails extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: widget.drink.color,
+                color: widget.widget.drink.color,
                 borderRadius: BorderRadius.circular(10),
               ),
               height: 88,
@@ -63,7 +68,11 @@ class RowDetails extends StatelessWidget {
               child: MyIcons(
                 icon: bag,
                 size: 42,
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+
+                  });
+                },
               ),
             ),
             Positioned(
@@ -72,11 +81,11 @@ class RowDetails extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
-                  color: widget.drink.color,
+                  color: widget.widget.drink.color,
                   shape: BoxShape.circle,
                 ),
                 child: Text(
-                  "$quantity",
+                  "${widget.quantity}",
                   style: TextStyles.bagQuantity,
                 ),
               ),
