@@ -115,14 +115,13 @@ class _DetailspageState extends State<Detailspage> {
 
   Widget _buildSizeOption(DrinkSize size, bool isSelected) {
     Size getSizeDimensions(DrinkSize size) {
-      if (size == DrinkSize.small ) {
-        return Size(48, 65);
-      } if (size == DrinkSize.medium) {
-        return Size(60.0, 80.0);
-      } if (size == DrinkSize.large) {
-        return Size(80.0, 90.0);
-      }
-      return Size(30.0, 40.0);
+      return size == DrinkSize.small
+          ? Size(48, 65)
+          : size == DrinkSize.medium
+          ? Size(60.0, 80.0)
+          : size == DrinkSize.large
+          ? Size(80.0, 90.0)
+          : Size(30.0, 40.0);
     }
     return GestureDetector(
       onTap: () {
