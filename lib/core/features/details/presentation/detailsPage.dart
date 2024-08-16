@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
-import 'package:drinks/core/features/details/presentation/widgets/cupDetails.dart';
+import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +88,8 @@ class _DetailspageState extends State<Detailspage> {
                         detailsBar(drink: widget.drink),
                         Column(
                           children: [
-                            sizedBox(height: 50,),
-                            cupDetails(widget: widget),
+                            // sizedBox(height: 50,),
+                            CupPlace(drink: widget.drink),
                             sizedBox(height: 25),
                           ],
                         ),
@@ -134,7 +134,7 @@ class _DetailspageState extends State<Detailspage> {
     Size getSizeDimensions(String size) {
       switch (size.toLowerCase()) {
         case 'small':
-          return Size(40.0, 60.0);
+          return Size(48.0, 65.0);
         case 'medium':
           return Size(60.0, 80.0);
         case 'large':
