@@ -3,6 +3,8 @@ import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../components/customTextField.dart';
+
 class Searchfiled extends StatefulWidget {
   const Searchfiled({super.key});
 
@@ -31,15 +33,14 @@ class _SearchfiledState extends State<Searchfiled> {
             stops: [0.49, 0.10],
           )
         ),
-        child: TextField(
-        controller: searchController,
-        decoration:   InputDecoration(
+        child: customTextField(
+          myController: searchController,
           prefixIcon: Container(
-              margin: EdgeInsets.only(left: 16.0, right: 39.0),
-              child: search),
-          hintText: 'Search for drinks',
+            margin: EdgeInsets.only(left: 16.0, right: 39.0),
+            child: search,
+          ),
+          hinttext: "Search For Drinks",
         ),
-            ),
       ),
     );
   }
