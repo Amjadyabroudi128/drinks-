@@ -13,9 +13,7 @@ class customTextField extends StatelessWidget {
     return  TextField(
       controller: myController,
       decoration:   InputDecoration(
-        prefixIcon: Container(
-            margin: EdgeInsets.only(left: 16.0, right: 39.0),
-            child: child),
+        prefixIcon: prefixIcon,
         hintText: hinttext,
       ),
     );
