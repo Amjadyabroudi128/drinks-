@@ -36,7 +36,7 @@ class DrinksList extends StatelessWidget {
               ),
             );
           },
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisExtent: 200,
           ),

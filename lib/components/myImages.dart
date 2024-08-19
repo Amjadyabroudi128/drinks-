@@ -7,4 +7,5 @@
  static String sprite = "images/SpriteLogo.png";
  static String pepper = "images/pepper.png";
  static String cup = "images/cup.jpg";
+ static String amjad = "images/amjad.jpg";
  }
