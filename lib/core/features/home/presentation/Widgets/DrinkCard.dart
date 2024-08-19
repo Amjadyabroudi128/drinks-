@@ -1,3 +1,4 @@
+import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/home/presentation/Widgets/translateWidget.dart';
 import 'package:drinks/core/features/models/drinkModel.dart';
 import 'package:flutter/cupertino.dart';
@@ -31,7 +32,7 @@ class DrinkCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 6),
+        sizedBox(height: 6,),
         Text(drink.name, style: TextStyles.drinksNames),
       ],
     );
