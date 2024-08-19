@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../../../constatns/TextStyles.dart';
-import 'CupPainter.dart';
 
 class DrinkCard extends StatelessWidget {
   final Drinks drink;
