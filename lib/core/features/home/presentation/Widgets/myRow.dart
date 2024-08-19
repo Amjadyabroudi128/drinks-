@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../components/IconButton.dart';
+import '../../../../../components/myImages.dart';
 import '../../../../../constatns/Constants.dart';
 
 class myRow extends StatelessWidget {
@@ -15,7 +16,7 @@ class myRow extends StatelessWidget {
         Card(
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
-          child: Image.asset("images/amjad.jpg", height: 58,),
+          child: Image.asset(myImages.amjad, height: 58,),
         ),
         Spacer(),
         MyIcons(
