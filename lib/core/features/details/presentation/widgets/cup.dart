@@ -32,7 +32,7 @@ class CupPlace extends StatelessWidget {
               ),
             ),
           ),
-           Positioned(
+           const Positioned(
             height: 22,
             bottom: -9, // Aligns the Divider at the bottom of the Stack
             left: -10,

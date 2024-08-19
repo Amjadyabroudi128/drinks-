@@ -6,6 +6,7 @@ import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
 import 'package:drinks/core/features/details/presentation/widgets/detailsBar.dart';
 import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
+import '../../../../components/appSizing.dart';
 import '../../enums/Enums.dart';
 import '../../home/presentation/Widgets/CupPainter.dart';
 import '../../models/drinkModel.dart';
@@ -58,7 +59,7 @@ class _DetailspageState extends State<Detailspage> {
             children: <Widget>[
               Container(
                 height: MediaQuery.of(context).size.height * 0.54,
-                width: MediaQuery.of(context).size.width,
+                width: AppSizing.width(context),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: widget.drink.color,
