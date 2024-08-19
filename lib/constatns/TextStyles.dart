@@ -38,4 +38,5 @@ import 'package:flutter/material.dart';
    static TextStyle bagQuantity = const TextStyle(
        color: Colors.white,
        fontSize: 18);
+   static TextStyle drinkName = const TextStyle(color: Colors.white, fontSize: 30);
  }
