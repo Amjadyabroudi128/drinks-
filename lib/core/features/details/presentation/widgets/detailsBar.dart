@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../components/sizedBox.dart';
 import '../../../../../constatns/Constants.dart';
+import '../../../../../constatns/TextStyles.dart';
 import '../../../models/drinkModel.dart';
 
 class detailsBar extends StatelessWidget {
@@ -22,7 +23,7 @@ class detailsBar extends StatelessWidget {
           Navigator.of(context).pushNamed(homeViewBody.id);
         },),
         sizedBox(width: 3,),
-        Text(drink.name, style: TextStyle(color: Colors.white, fontSize: 30),),
+        Text(drink.name, style: TextStyles.drinkName,),
       ],
     );
   }
