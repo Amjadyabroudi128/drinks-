@@ -58,7 +58,7 @@ class _DetailspageState extends State<Detailspage> {
           child: Column(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.height * 0.54,
+                height: AppSizing.height54(context),
                 width: AppSizing.width(context),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
