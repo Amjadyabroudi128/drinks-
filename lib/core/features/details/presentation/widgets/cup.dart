@@ -1,3 +1,4 @@
+import 'package:drinks/components/myContainer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../home/presentation/Widgets/CupPainter.dart';
@@ -20,7 +21,7 @@ class CupPlace extends StatelessWidget {
           Center(
             child: CustomPaint(
               painter: CupPainter(drink: drink),
-              child: Container(
+              child: myContainer(
                 width: 120.0,
                 height: 175.0,
                 alignment: Alignment.center,
