@@ -15,37 +15,11 @@ class CustomAppBar extends StatelessWidget {
         children: [
           myRow(),
           SizedBox(height: 10,),
-          RichText(
-            text:  TextSpan(
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'Hey,',
-                  style: TextStyles.kFont20
-                ),
-                TextSpan(
-                  text: '  Amjad',
-                  style: TextStyles.Bold20,
-                ),
-              ],
-            ),
-          ),
+          heyText(),
           sizedBox(
             height: 6,
           ),
-          RichText(
-            text:  TextSpan(
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'What would you ',
-                  style: TextStyles.kFont19
-                ),
-                TextSpan(
-                  text: 'Like?',
-                  style: TextStyles.Bold19
-                ),
-              ],
-            ),
-          ),
+          whatText(),
         ],
       ),
     );
@@ -54,4 +28,52 @@ class CustomAppBar extends StatelessWidget {
   }
 
 
+}
+
+class whatText extends StatelessWidget {
+  const whatText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text:  TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: 'What would you ',
+            style: TextStyles.kFont19
+          ),
+          TextSpan(
+            text: 'Like?',
+            style: TextStyles.Bold19
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class heyText extends StatelessWidget {
+  const heyText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text:  TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: 'Hey,',
+            style: TextStyles.kFont20
+          ),
+          TextSpan(
+            text: '  Amjad',
+            style: TextStyles.Bold20,
+          ),
+        ],
+      ),
+    );
+  }
 }
