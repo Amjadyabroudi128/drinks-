@@ -1,3 +1,4 @@
+import 'package:drinks/components/myContainer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../components/IconButton.dart';
@@ -63,7 +64,7 @@ class _RowDetailsState extends State<RowDetails> {
           padding: const EdgeInsets.only(right: 10),
           child: Stack(
             children: [
-              Container(
+              myContainer(
                 decoration: BoxDecoration(
                   color: widget.widget.drink.color,
                   borderRadius: BorderRadius.circular(10),
@@ -83,7 +84,7 @@ class _RowDetailsState extends State<RowDetails> {
               Positioned(
                 top: -7,
                 right: 2,
-                child: Container(
+                child: myContainer(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
                     color: widget.widget.drink.color,
