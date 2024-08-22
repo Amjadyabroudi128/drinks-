@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:drinks/components/myContainer.dart';
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
@@ -88,7 +89,7 @@ class _DetailspageState extends State<Detailspage> {
                   ),
                 ),
               ),
-              Container(
+              myContainer(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Column(
@@ -138,7 +139,7 @@ class _DetailspageState extends State<Detailspage> {
         children: [
           CustomPaint(
             painter: CupPainter(drink: widget.drink),
-            child: Container(
+            child: myContainer(
               width: getSizeDimensions(size).width,
               height: getSizeDimensions(size).height,
               alignment: Alignment.center,
