@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../components/customTextField.dart';
+import '../../../../../components/myContainer.dart';
 
 class Searchfiled extends StatefulWidget {
   const Searchfiled({super.key});
@@ -23,7 +24,7 @@ class _SearchfiledState extends State<Searchfiled> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(29, 10, 20, 1),
-      child: Container(
+      child: myContainer(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22.0),
           gradient: LinearGradient(
@@ -35,7 +36,7 @@ class _SearchfiledState extends State<Searchfiled> {
         ),
         child: customTextField(
           myController: searchController,
-          prefixIcon: Container(
+          prefixIcon: myContainer(
             margin: EdgeInsets.only(left: 16.0, right: 39.0),
             child: search,
           ),
