@@ -7,7 +7,8 @@ class myContainer extends StatelessWidget {
   final AlignmentGeometry? alignment;
   final double? height;
   final double? width;
-  const myContainer({super.key,  this.decoration, this.border, this.child, this.alignment, this.height, this.width});
+  final EdgeInsetsGeometry? margin;
+  const myContainer({super.key,  this.decoration, this.border, this.child, this.alignment, this.height, this.width, this.margin});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class myContainer extends StatelessWidget {
       alignment: alignment,
       height: height,
       width: width,
+      margin: margin,
       child: child,
     );
   }
