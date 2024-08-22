@@ -26,6 +26,6 @@ class AppTheme {
       thickness: 4,
       indent: 180,
       endIndent: 140,
-    )
+    ),
   );
  }

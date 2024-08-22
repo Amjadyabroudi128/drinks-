@@ -8,11 +8,13 @@ class myContainer extends StatelessWidget {
   final double? height;
   final double? width;
   final EdgeInsetsGeometry? margin;
-  const myContainer({super.key,  this.decoration, this.border, this.child, this.alignment, this.height, this.width, this.margin});
+  final EdgeInsetsGeometry? padding;
+  const myContainer({super.key,  this.decoration, this.border, this.child, this.alignment, this.height, this.width, this.margin, this.padding});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: padding,
       decoration: decoration,
       alignment: alignment,
       height: height,
