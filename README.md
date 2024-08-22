@@ -13,3 +13,8 @@ I have changed the colors of the drinks a bit
 
 ![Screenshot (50)](https://github.com/user-attachments/assets/61d8ebfd-aedb-43aa-b747-b82fb7928515)
 
+here is the details page 
+
+![Screenshot (61)](https://github.com/user-attachments/assets/a0ed5b6e-94ce-40f9-96bb-326054e7c21b)
+
+
