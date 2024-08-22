@@ -20,6 +20,12 @@ class AppTheme {
       enabledBorder: _border,
       focusedBorder: _border,
       hintStyle: TextStyles.hint
+    ),
+    dividerTheme: const DividerThemeData(
+      color: Colors.black45,
+      thickness: 4,
+      indent: 180,
+      endIndent: 140,
     )
   );
  }
