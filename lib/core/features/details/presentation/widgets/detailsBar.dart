@@ -1,3 +1,4 @@
+import 'package:drinks/components/IconButton.dart';
 import 'package:drinks/core/features/details/presentation/detailsPage.dart';
 import 'package:drinks/core/features/home/presentation/Widgets/homeViewBody.dart';
 import 'package:flutter/material.dart';
@@ -19,9 +20,12 @@ class detailsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(icon: goBack, onPressed: (){
-          Navigator.of(context).pushNamed(homeViewBody.id);
-        },),
+        MyIcons(
+          icon: goBack,
+          onPressed: (){
+            Navigator.of(context).pushNamed(homeViewBody.id);
+          },
+        ),
         sizedBox(width: 3,),
         Text(drink.name, style: TextStyles.drinkName,),
       ],
