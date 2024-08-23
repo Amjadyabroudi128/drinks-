@@ -58,7 +58,7 @@ class _DetailspageState extends State<Detailspage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Container(
+              myContainer(
                 height: AppSizing.height54(context),
                 width: AppSizing.width(context),
                 decoration: BoxDecoration(
