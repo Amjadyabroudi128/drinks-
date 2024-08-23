@@ -1,3 +1,4 @@
+import 'package:drinks/components/padding.dart';
 import 'package:drinks/components/sizedBox.dart';
 import 'package:drinks/constatns/TextStyles.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,8 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(40, 40, 20, 10),
+    return const Spacing(
+      edgeInsetsGeometry: EdgeInsets.fromLTRB(40, 40, 20, 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
