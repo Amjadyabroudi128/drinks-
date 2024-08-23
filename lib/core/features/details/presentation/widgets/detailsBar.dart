@@ -18,6 +18,8 @@ class detailsBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String name = drink.name;
+
     return Row(
       children: [
         MyIcons(
@@ -27,7 +29,7 @@ class detailsBar extends StatelessWidget {
           },
         ),
         sizedBox(width: 3,),
-        Text(drink.name, style: TextStyles.drinkName,),
+        Text(name, style: TextStyles.drinkName,),
       ],
     );
   }
