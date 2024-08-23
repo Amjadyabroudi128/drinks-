@@ -25,11 +25,7 @@ class CupPlace extends StatelessWidget {
                 width: 120.0,
                 height: 175.0,
                 alignment: Alignment.center,
-                child: Image.asset(
-                  drink.image,
-                  width: 56,
-                  height: 126,
-                ),
+                child: drinkImage(drink: drink),
               ),
             ),
           ),
@@ -42,6 +38,24 @@ class CupPlace extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class drinkImage extends StatelessWidget {
+  const drinkImage({
+    super.key,
+    required this.drink,
+  });
+
+  final Drinks drink;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      drink.image,
+      width: 56,
+      height: 126,
     );
   }
 }
