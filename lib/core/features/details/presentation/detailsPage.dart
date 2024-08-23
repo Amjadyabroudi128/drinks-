@@ -143,7 +143,7 @@ class _DetailspageState extends State<Detailspage> {
               width: getSizeDimensions(size).width,
               height: getSizeDimensions(size).height,
               alignment: Alignment.center,
-              child: Image.asset(widget.drink.image, width: 32, height: 63),
+              child: drinkImage(widget: widget),
             ),
           ),
           sizedBox(height: 8,),
@@ -159,5 +159,19 @@ class _DetailspageState extends State<Detailspage> {
         ],
       ),
     );
+  }
+}
+
+class drinkImage extends StatelessWidget {
+  const drinkImage({
+    super.key,
+    required this.widget,
+  });
+
+  final Detailspage widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(widget.drink.image, width: 32, height: 63);
   }
 }
