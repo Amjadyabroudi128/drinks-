@@ -45,11 +45,12 @@ class CupPlace extends StatelessWidget {
 class drinkImage extends StatelessWidget {
   const drinkImage({
     super.key,
-    required this.drink,
+    required this.drink, this.height, this.width,
   });
 
   final Drinks drink;
-
+  final double? height;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return Image.asset(
