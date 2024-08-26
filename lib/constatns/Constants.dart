@@ -8,3 +8,5 @@ const Icon goBack = Icon(Icons.arrow_back,);
 const Icon remove = Icon(Icons.remove_circle_outline,);
 const Icon add = Icon(Icons.add_circle_outline,);
 const double defaultIconSize = 30;
+const FontWeight normal = FontWeight.normal;
+const FontWeight bold = FontWeight.bold;

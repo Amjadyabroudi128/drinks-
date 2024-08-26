@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:drinks/components/myContainer.dart';
 import 'package:drinks/components/sizedBox.dart';
+import 'package:drinks/constatns/Constants.dart';
 import 'package:drinks/core/features/details/presentation/widgets/Icons.dart';
 import 'package:drinks/core/features/details/presentation/widgets/RowDetails.dart';
 import 'package:drinks/core/features/details/presentation/widgets/cup.dart';
@@ -152,7 +153,7 @@ class _DetailspageState extends State<Detailspage> {
             style: TextStyle(
               color: isSelected ? widget.drink.color : unSelected,
               fontSize: 18.0,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+              fontWeight: isSelected ? bold: normal,
             ),
           ),
           sizedBox(height: 56,)
