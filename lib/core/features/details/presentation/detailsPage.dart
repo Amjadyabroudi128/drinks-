@@ -173,6 +173,6 @@ class drinkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(widget.drink.image, width: 32, height: 63);
+    return Image.asset(widget.drink.image, width: imageWidth, height: imageHeight);
   }
 }

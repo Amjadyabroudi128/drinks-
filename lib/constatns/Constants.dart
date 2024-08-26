@@ -10,3 +10,5 @@ const Icon add = Icon(Icons.add_circle_outline,);
 const double defaultIconSize = 30;
 const FontWeight normal = FontWeight.normal;
 const FontWeight bold = FontWeight.bold;
+const double imageWidth = 32;
+const double imageHeight = 63;
