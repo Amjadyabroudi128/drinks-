@@ -12,3 +12,7 @@ const FontWeight normal = FontWeight.normal;
 const FontWeight bold = FontWeight.bold;
 const double imageWidth = 32;
 const double imageHeight = 63;
+const double cardHeight = 155;
+const double cardWidth = 163;
+const double radius = 12;
+

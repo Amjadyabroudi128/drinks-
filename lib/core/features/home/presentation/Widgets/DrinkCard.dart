@@ -1,5 +1,6 @@
 import 'package:drinks/components/myContainer.dart';
 import 'package:drinks/components/sizedBox.dart';
+import 'package:drinks/constatns/Constants.dart';
 import 'package:drinks/core/features/home/presentation/Widgets/translateWidget.dart';
 import 'package:drinks/core/features/models/drinkModel.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,12 +19,12 @@ class DrinkCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 155,
-          width: 163,
+          height: cardHeight,
+          width: cardWidth,
           child: myContainer(
             decoration: BoxDecoration(
                 color: drink.color.withOpacity(0.91),
-                borderRadius: BorderRadius.circular(12.0),
+                borderRadius: BorderRadius.circular(radius),
                 border: Border.all(color: Colors.transparent)
             ),
             child: Stack(
