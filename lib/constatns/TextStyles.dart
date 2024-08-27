@@ -29,9 +29,9 @@ import 'package:flutter/material.dart';
      fontWeight: bold,
      fontSize: font36,
    );
-   static TextStyle mL = const  TextStyle(
-     color: Colors.black45,
-     fontSize: 27,
+   static TextStyle mL =  TextStyle(
+     color: mlClr,
+     fontSize: priceFont,
    );
    static TextStyle price = TextStyle (
      fontSize: 32
