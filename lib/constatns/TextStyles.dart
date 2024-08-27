@@ -1,3 +1,4 @@
+import 'package:drinks/constatns/Constants.dart';
 import 'package:drinks/core/features/themes/colors.dart';
 import 'package:flutter/material.dart';
  class TextStyles {
@@ -23,10 +24,10 @@ import 'package:flutter/material.dart';
    static TextStyle quantity = const TextStyle(
        color: Colors.white,
        fontSize: 30);
-   static TextStyle volume = const TextStyle(
-     color: Colors.black,
-     fontWeight: FontWeight.bold,
-     fontSize: 36,
+   static TextStyle volume =  TextStyle(
+     color: blackIcon,
+     fontWeight: bold,
+     fontSize: font36,
    );
    static TextStyle mL = const  TextStyle(
      color: Colors.black45,

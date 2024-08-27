@@ -18,4 +18,5 @@ const double radius = 12;
 // fonts
 const FontWeight normal = FontWeight.normal;
 const FontWeight bold = FontWeight.bold;
+const double font36 = 36;
 
